@@ -21,6 +21,15 @@ class CardCollection
     #[ORM\JoinColumn(nullable: false)]
     private ?Collect $Collect_id = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $Quantity = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $Favourite = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $Tradable = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +55,42 @@ class CardCollection
     public function setCollectId(?Collect $Collect_id): static
     {
         $this->Collect_id = $Collect_id;
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->Quantity;
+    }
+
+    public function setQuantity(?int $Quantity): static
+    {
+        $this->Quantity = $Quantity;
+
+        return $this;
+    }
+
+    public function isFavourite(): ?bool
+    {
+        return $this->Favourite;
+    }
+
+    public function setFavourite(?bool $Favourite): static
+    {
+        $this->Favourite = $Favourite;
+
+        return $this;
+    }
+
+    public function isTradable(): ?bool
+    {
+        return $this->Tradable;
+    }
+
+    public function setTradable(?bool $Tradable): static
+    {
+        $this->Tradable = $Tradable;
 
         return $this;
     }
