@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Collection;
+use App\Entity\Collect;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Collection>
+ * @extends ServiceEntityRepository<Collect>
  *
- * @method Collection|null find($id, $lockMode = null, $lockVersion = null)
- * @method Collection|null findOneBy(array $criteria, array $orderBy = null)
- * @method Collection[]    findAll()
- * @method Collection[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Collect|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Collect|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Collect[]    findAll()
+ * @method Collect[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CollectionRepository extends ServiceEntityRepository
+class CollectRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Collection::class);
+        parent::__construct($registry, Collect::class);
     }
 
-    public function save(Collection $entity, bool $flush = false): void
+    public function save(Collect $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class CollectionRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Collection $entity, bool $flush = false): void
+    public function remove(Collect $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class CollectionRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Collection[] Returns an array of Collection objects
+//     * @return Collect[] Returns an array of Collect objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class CollectionRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Collection
+//    public function findOneBySomeField($value): ?Collect
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')

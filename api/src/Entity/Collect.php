@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\CollectionRepository;
+use App\Repository\CollectRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CollectionRepository::class)]
-class Collection
+#[ORM\Entity(repositoryClass: CollectRepository::class)]
+class Collect
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
