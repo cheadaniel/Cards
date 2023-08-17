@@ -20,6 +20,14 @@ class Message
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $CreatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'User_sender_id')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $User_sender_id = null;
+
+    #[ORM\ManyToOne(inversedBy: 'User_recever_id')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $User_recever_id = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +53,30 @@ class Message
     public function setCreatedAt(\DateTimeInterface $CreatedAt): static
     {
         $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+
+    public function getUserSenderId(): ?User
+    {
+        return $this->User_sender_id;
+    }
+
+    public function setUserSenderId(?User $User_sender_id): static
+    {
+        $this->User_sender_id = $User_sender_id;
+
+        return $this;
+    }
+
+    public function getUserReceverId(): ?User
+    {
+        return $this->User_recever_id;
+    }
+
+    public function setUserReceverId(?User $User_recever_id): static
+    {
+        $this->User_recever_id = $User_recever_id;
 
         return $this;
     }
