@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="{{asset('css/style.css')}}">
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}
-        <div>cocuou</div>{% endblock %}
-    </body>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<nav class="navbar">
+			<ul>
+				<li>
+					<a href="{{path('app_home')}}">Home</a>
+				</li>
+				<li>
+					<a href="">Jeux</a>
+				</li>
+				{# {% if not app.user %} #}
+					<li>
+						<a href="{{path('app_register')}}">S'inscrire</a>
+					</li>
+					<li>
+						<a href="{{path('app_login')}}">Connexion</a>
+					</li>
+				{# {% endif %} #}
+				{# {% if app.user %} #}
+
+					{# {% if is_granted('ROLE_ADMIN') %} #}
+						<li>
+							<a href="">Admin</a>
+						</li>
+					{# {%  endif %} #}
+                    <li>
+						<a href="">Mon compte</a>
+					</li>
+					<li>
+						<a href="">Emprunter</a>
+					</li>
+					<li>
+						<a href="">Mes locations</a>
+					</li>
+					{# {% if is_granted('ROLE_ADMIN') %} #}
+						<li>
+							<a href="">Location Admin</a>
+						</li>
+					{# {%  endif %} #}
+					<li>
+						<a href="">Déconnexion</a>
+					</li>
+				{# {% endif %} #}
+			</ul>
+		</nav>
+		{% block body %}
+			<div>cocuou</div>
+		{% endblock %}
+	</body>
 </html>
