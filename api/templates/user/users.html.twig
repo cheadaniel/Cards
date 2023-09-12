@@ -22,7 +22,7 @@
 							<a href="">Voir Collection</a>
 						</td>
 						<td>
-							<a href="{{path('send_message', {'user_id_sender': app.user.id, 'user_id_recever' : user.id})}}">Contacter</a>
+							<a href="{{path('conversation', {'user_id_sender': app.user.id, 'user_id_recever' : user.id})}}">Contacter</a>
 						</td>
 					</tr>
 				{% endfor %}

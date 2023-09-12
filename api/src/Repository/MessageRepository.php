@@ -39,7 +39,7 @@ class MessageRepository extends ServiceEntityRepository
         }
     }
 
-    public function findByUsers( $user1Id, $user2Id)
+    public function findByUsers($user1Id, $user2Id) // requete qui va recuperer tous les messages entre 2 utilisateurs diffenrents
     {
         return $this->createQueryBuilder('m')
             ->andWhere('(m.User_sender_id = :user1 AND m.User_recever_id = :user2) OR (m.User_sender_id = :user2 AND m.User_recever_id = :user1)')
@@ -50,28 +50,38 @@ class MessageRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-//    /**
-//     * @return Message[] Returns an array of Message objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('m.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findDistinctDestinatairesByUserSender($userId) //requete qui va récupérer tous les id des destinataires pour un user donné expéditeur
+    {
+        return $this->createQueryBuilder('m')
+            ->select('DISTINCT IDENTITY(m.User_recever_id) AS destinataire_id')
+            ->where('m.User_sender_id = :userId')
+            ->setParameter('userId', $userId)
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Message
-//    {
-//        return $this->createQueryBuilder('m')
-//            ->andWhere('m.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //    /**
+    //     * @return Message[] Returns an array of Message objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('m')
+    //            ->andWhere('m.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('m.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?Message
+    //    {
+    //        return $this->createQueryBuilder('m')
+    //            ->andWhere('m.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

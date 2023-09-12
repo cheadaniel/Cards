@@ -1,5 +1,7 @@
 
 {% block body %}
     <h1>Envoyer un message</h1>
+    <div class="newMessage" data-id="{{user_recever.id}}">
     {{ form(messageForm) }}
+    </div>
 {% endblock %}
