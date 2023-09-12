@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<aside>
+
+	<h1>Mes Contacts</h1>
+	<div class="">
+		{% for recever in recevers %}
+			<div>
+				<a href="#" class="sendMessageLink" data-id="{{ recever.id }}">{{ recever.name }}</a>
+			</div>
+		{% endfor %}
+	</div>
+</aside>
+<div id="messageContainer">
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/contact.js') }}" type="module"></script>
+{% endblock %}

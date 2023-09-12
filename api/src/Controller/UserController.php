@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Message;
+use App\Entity\User;
 use App\Form\MessageFormType;
+use App\Repository\MessageRepository;
 use App\Repository\UserRepository;
 use DateTimeImmutable;
 use DateTimeZone;
@@ -35,4 +37,21 @@ class UserController extends AbstractController
         ]);
     }
 
+    #[Route ('/contact/{id}', name: 'contact')]
+    public function contact(MessageRepository $messageRepository, UserRepository $userRepository, $id) : Response 
+    {
+        $receversIds = $messageRepository->findDistinctDestinatairesByUserSender($id);
+    
+        $recevers = [];
+        foreach ($receversIds as $receverId) {
+            $recever = $userRepository->find($receverId['destinataire_id']);
+            if ($recever instanceof User) {
+                $recevers[] = $recever;
+            }
+        }
+    
+        return $this->render('user/contact.html.twig', [
+            'recevers' => $recevers
+        ]);
+    }
 }
