@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilsatateurs
+{% endblock %}
+
+{% block body %}
+	<style></style>
+
+	<div>
+		{# <form action="{{ path('book_search') }}" method="get" class="actions search">
+													<input type="text" name="keyword" placeholder="Recherche...">
+													<button type="submit">Rechercher</button>
+												</form> #}
+	</div>
+	<div>
+		<h1>{{user_sender.name}}</h1>
+		<h6>{{user_recever.name}}</h6>
+	</div>
+{% endblock %}

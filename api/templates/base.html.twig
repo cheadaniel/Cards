@@ -28,22 +28,25 @@
 					<a href="">Jeux</a>
 				</li>
 				{# {% if not app.user %} #}
-					<li>
-						<a href="{{path('app_register')}}">S'inscrire</a>
-					</li>
-					<li>
-						<a href="{{path('app_login')}}">Connexion</a>
-					</li>
+				<li>
+					<a href="{{path('app_users')}}">Utilisateurs</a>
+				</li>
+				<li>
+					<a href="{{path('app_register')}}">S'inscrire</a>
+				</li>
+				<li>
+					<a href="{{path('app_login')}}">Connexion</a>
+				</li>
 				{# {% endif %} #}
-				{# {% if app.user %} #}
+				{% if app.user %}
 
 					{# {% if is_granted('ROLE_ADMIN') %} #}
-						<li>
-							<a href="">Admin</a>
-						</li>
+					<li>
+						<a href="">Admin</a>
+					</li>
 					{# {%  endif %} #}
-                    <li>
-						<a href="">Mon compte</a>
+					<li>
+						<a href="{{path('my_account', {'id': app.user.id})}}">Mon compte</a>
 					</li>
 					<li>
 						<a href="">Emprunter</a>
@@ -52,18 +55,18 @@
 						<a href="">Mes locations</a>
 					</li>
 					{# {% if is_granted('ROLE_ADMIN') %} #}
-						<li>
-							<a href="">Location Admin</a>
-						</li>
+					<li>
+						<a href="">Location Admin</a>
+					</li>
 					{# {%  endif %} #}
 					<li>
-						<a href="">Déconnexion</a>
+						<a href="{{path('app_logout')}}">Déconnexion</a>
 					</li>
-				{# {% endif %} #}
+				{% endif %}
 			</ul>
 		</nav>
 		{% block body %}
-			<div>cocuou</div>
+			<div>Test</div>
 		{% endblock %}
 	</body>
 </html>

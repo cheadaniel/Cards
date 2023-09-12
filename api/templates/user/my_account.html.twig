@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+	<style>
+	</style>
+
+	<div class="example-wrapper">
+		<h1>Profil de
+			{{ user.name }}</h1>
+		<p>Email:
+			{{ user.email }}</p>
+		<p>Pseudo:
+			{{ user.name }}</p>
+	</div>
+{% endblock %}
