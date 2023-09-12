@@ -2,8 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Message;
+use App\Form\MessageFormType;
 use App\Repository\UserRepository;
+use DateTimeImmutable;
+use DateTimeZone;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,15 +35,4 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/contact/{user_id_sender}/{user_id_recever}', name: 'contact_user')]
-    public function contact_user(UserRepository $userRepository, $user_id_sender, $user_id_recever)
-    {
-        $user_sender = $userRepository->find($user_id_sender);
-        $user_recever = $userRepository->find($user_id_recever);
-
-        return $this->render('user/contact_user.html.twig', [
-            'user_sender' => $user_sender,
-            'user_recever' => $user_recever
-        ]);
-    }
 }

@@ -39,6 +39,17 @@ class MessageRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByUsers( $user1Id, $user2Id)
+    {
+        return $this->createQueryBuilder('m')
+            ->andWhere('(m.User_sender_id = :user1 AND m.User_recever_id = :user2) OR (m.User_sender_id = :user2 AND m.User_recever_id = :user1)')
+            ->setParameter('user1', $user1Id)
+            ->setParameter('user2', $user2Id)
+            ->orderBy('m.CreatedAt', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Message[] Returns an array of Message objects
 //     */

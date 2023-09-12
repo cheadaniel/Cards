@@ -1,0 +1,13 @@
+
+{% block body %}
+    <div class="container">
+        <h1>Messages</h1>
+        <div class="message-container">
+            {% for message in old_messages %}
+                <div class="message {% if message.getUserSenderId() == user_sender %}right{% else %}left{% endif %}">
+                    {{ message.content }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

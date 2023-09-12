@@ -1,0 +1,13 @@
+/* Styles CSS pour aligner les messages de l'expéditeur à droite */
+.message.right {
+    text-align: right;
+    background-color: #c0e2d8; /* Couleur de fond pour les messages de l'expéditeur */
+    margin-right: 10px; /* Marge à droite pour les messages de l'expéditeur */
+}
+
+/* Styles CSS pour aligner les messages du destinataire à gauche */
+.message.left {
+    text-align: left;
+    background-color: #f2f2f2; /* Couleur de fond pour les messages du destinataire */
+    margin-left: 10px; /* Marge à gauche pour les messages du destinataire */
+}
