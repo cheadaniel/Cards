@@ -16,4 +16,8 @@
 		<h1>{{user_sender.name}}</h1>
 		<h6>{{user_recever.name}}</h6>
 	</div>
+    {% include '/message/old_messages.html.twig' %}
+    <div>
+    {% include '/message/send_message.html.twig' %}
+    </div>
 {% endblock %}
