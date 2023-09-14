@@ -8,9 +8,9 @@
 
 	<div>
 		{# <form action="{{ path('book_search') }}" method="get" class="actions search">
-											<input type="text" name="keyword" placeholder="Recherche...">
-											<button type="submit">Rechercher</button>
-										</form> #}
+															<input type="text" name="keyword" placeholder="Recherche...">
+															<button type="submit">Rechercher</button>
+														</form> #}
 	</div>
 	<div>
 		<table>
@@ -22,11 +22,26 @@
 							<a href="">Voir Collection</a>
 						</td>
 						<td>
-							<a href="{{path('conversation', {'user_id_sender': app.user.id, 'user_id_recever' : user.id})}}">Contacter</a>
+							<button class="contact-btn" "data-user-recever-id"={{user.id}}>Contacter</button>
 						</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
+
+		<div>
+			{% for user in users %}
+				<form id="messageForm" data-user-sender-id="{{ app.user.id }}" data-user-recever-id="{{ user.id }}">
+					<label for="messageContent">Contenu du message :</label>
+					<textarea id="messageContent" name="messageContent" rows="4" cols="50" required></textarea>
+					<button type="submit">Envoyer</button>
+				</form>
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/users.js') }}" type="module"></script>
+{% endblock %}
+
