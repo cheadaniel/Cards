@@ -11,3 +11,7 @@
     background-color: #f2f2f2; /* Couleur de fond pour les messages du destinataire */
     margin-left: 10px; /* Marge à gauche pour les messages du destinataire */
 }
+
+#messageForm {
+    display: none;
+}
