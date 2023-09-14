@@ -1,19 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<aside>
+	<aside>
 
-	<h1>Mes Contacts</h1>
-	<div class="">
-		{% for recever in recevers %}
-			<div>
-				<a href="#" class="sendMessageLink" data-id="{{ recever.id }}">{{ recever.name }}</a>
-			</div>
-		{% endfor %}
+		<h1>Mes Contacts</h1>
+		<div class="">
+			{% for recever in recevers %}
+				<div>
+					<a href="#" class="sendMessageLink" data-id="{{ recever.id }}">{{ recever.name }}</a>
+				</div>
+			{% endfor %}
+		</div>
+	</aside>
+	<div id="messageContainer"></div>
+	<div>
+		<form id="messageForm" class="showForm">
+			<label for="messageContent">Contenu du message :</label>
+			<textarea id="messageContent" name="messageContent" rows="4" cols="50" required></textarea>
+			<button type="submit">Envoyer</button>
+		</form>
 	</div>
-</aside>
-<div id="messageContainer">
-</div>
 
 {% endblock %}
 
