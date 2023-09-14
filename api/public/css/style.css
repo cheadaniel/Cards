@@ -12,6 +12,6 @@
     margin-left: 10px; /* Marge à gauche pour les messages du destinataire */
 }
 
-#messageForm {
+.messageForm {
     display: none;
-}
+  }

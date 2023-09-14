@@ -1,13 +1,16 @@
 const contacterButtons = document.querySelectorAll('.contact-btn');
-const messageForm = document.getElementById('messageForm');
+
+const messageForm = document.querySelector('.messageForm');
 
 
 contacterButtons.forEach(button => {
     button.addEventListener('click', function (event) {
         event.preventDefault();
-
-
-        messageForm.style.display = 'block';
+        const userReceverId = this.getAttribute('data-user-recever-id');
+        messageForm.setAttribute('data-user-recever-id', userReceverId)
+        //if (messageForm.getAttribute('data-user-recever-id') == userReceverId) {
+            messageForm.style.display = 'block';
+        //}
     })
 })
 
@@ -35,6 +38,7 @@ function sendMessage() {
         .then(data => {
             if (data.success) {
                 // Redirigez l'utilisateur vers la page de contact
+                localStorage.setItem('userReceverId', userReceverId);
                 window.location.href = `/contact/${userSenderId}`;
             } else {
                 // Gérez les erreurs ou affichez un message de confirmation

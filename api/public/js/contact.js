@@ -1,6 +1,18 @@
 const messageContainer = document.getElementById('messageContainer');
-const messageForm = document.getElementById('messageForm');
+const messageForm = document.querySelector('.messageForm');
 const currentUrl = window.location.href;
+
+
+const idRecever = localStorage.getItem("userReceverId");
+console.log("Donnée récupérée de la page précédente :", idRecever);
+
+if (idRecever) {
+    fetchAndInsertData(currentUrl + '/' + idRecever, messageContainer)
+    messageForm.setAttribute('data-id', idRecever);
+    messageForm.style.display = 'block';
+}
+
+
 // Fonction pour effectuer une requête AJAX et insérer le résultat dans le conteneur
 function fetchAndInsertData(url, container) {
     fetch(url)
@@ -14,8 +26,6 @@ function fetchAndInsertData(url, container) {
 }
 
 function sendMessage(url, container) {
-    const messageContainer = document.getElementById('messageContainer');
-
     const messageFormContent = document.getElementById('messageContent');
     const content = messageFormContent.value;
     //messageContainer.innerHTML = ''
@@ -44,29 +54,18 @@ function sendMessage(url, container) {
         });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+// Écoutez les clics sur les liens avec la classe "sendMessageLink"
+document.querySelectorAll('.sendMessageLink').forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const userId = this.getAttribute('data-id');
+        const urlWithUserId = currentUrl + '/' + userId;
+        messageContainer.innerHTML = '\n'
 
-    //console.log(messageContainer, messageContainer.innerHTML)
-
-    // Écoutez les clics sur les liens avec la classe "sendMessageLink"
-    document.querySelectorAll('.sendMessageLink').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const userId = this.getAttribute('data-id');
-            const urlWithUserId = currentUrl + '/' + userId;
-            messageContainer.innerHTML = '\n'
-
-            // Appel de la fonction pour effectuer la première requête AJAX
-            fetchAndInsertData(urlWithUserId, messageContainer)
-
-            // Appel de la fonction pour effectuer la deuxième requête AJAX
-
-            messageForm.setAttribute('data-id', userId);
-            messageForm.style.display = 'block';
-
-            //sendMessage(urlWithUserId, messageContainer)
-            //3eme requete 
-        })
+        // Appel de la fonction pour effectuer la première requête AJAX
+        fetchAndInsertData(urlWithUserId, messageContainer)
+        messageForm.setAttribute('data-id', userId);
+        messageForm.style.display = 'block';
 
 
     })
@@ -80,4 +79,6 @@ messageForm.addEventListener('submit', function (event) {
 })
 
 
+function loadFromUsersPage(idRecever, url) {
 
+}
