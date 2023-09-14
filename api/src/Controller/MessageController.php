@@ -39,13 +39,16 @@ class MessageController extends AbstractController
     {
         $data = json_decode($request->getContent(), true);
         $content = $data['content'];
+        //pour eviter les caractéres spéciaux
+        $contentVerif = htmlspecialchars($content);
+
         
         $message = new Message();
         
         $user_sender = $userRepository->find($user_id_sender);
         $user_recever = $userRepository->find($user_id_recever);
         
-        $message->setContent($content);
+        $message->setContent($contentVerif);
         $message->setUserSenderId($user_sender);
         $message->setUserReceverId($user_recever);
         
