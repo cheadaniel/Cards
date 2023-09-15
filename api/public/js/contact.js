@@ -1,10 +1,12 @@
+import {fetchAndInsertData, sendMessage} from './functions.js';
+
+
 const messageContainer = document.getElementById('messageContainer');
 const messageForm = document.querySelector('.messageForm');
-const currentUrl = window.location.href;
+const currentUrl = window.location.href; //permettra d'activer les différents controler avec les ajax 
 
-
+// Donnée de la page des Users, si un contact a été fait grâce à cette page dans le but d'arriver dans la page des contact avec la conversation déjà chargée
 const idRecever = localStorage.getItem("userReceverId");
-console.log("Donnée récupérée de la page précédente :", idRecever);
 
 if (idRecever) {
     fetchAndInsertData(currentUrl + '/' + idRecever, messageContainer)
@@ -13,48 +15,7 @@ if (idRecever) {
 }
 
 
-// Fonction pour effectuer une requête AJAX et insérer le résultat dans le conteneur
-function fetchAndInsertData(url, container) {
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            container.innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Erreur réseau', error);
-        });
-}
-
-function sendMessage(url, container) {
-    const messageFormContent = document.getElementById('messageContent');
-    const content = messageFormContent.value;
-    //messageContainer.innerHTML = ''
-
-    fetch(url + '/message/send', {
-        method: 'POST',
-        body: JSON.stringify({ content }),
-        headers: {
-            'Content-Type': 'application/json', // Définissez le type de contenu JSON
-        },
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Insérez le résultat dans le conteneur
-
-            // Réinitialisez le formulaire ou effectuez d'autres actions en fonction de la réponse
-            if (data.success) {
-                // Réinitialisez le formulaire
-                messageForm.reset();
-                messageContainer.innerHTML = '\n'
-                fetchAndInsertData(url, container);
-            }
-        })
-        .catch(error => {
-            console.error('Erreur réseau', error);
-        });
-}
-
-// Écoutez les clics sur les liens avec la classe "sendMessageLink"
+// Écouter les clics sur les liens avec la classe "sendMessageLink" pour afficher la bonne conversation
 document.querySelectorAll('.sendMessageLink').forEach(link => {
     link.addEventListener('click', function (event) {
         event.preventDefault();
@@ -62,23 +23,18 @@ document.querySelectorAll('.sendMessageLink').forEach(link => {
         const urlWithUserId = currentUrl + '/' + userId;
         messageContainer.innerHTML = '\n'
 
-        // Appel de la fonction pour effectuer la première requête AJAX
+        // Appel de la fonction pour effectuer la première requête ajax qui affichera la conversation associé 
         fetchAndInsertData(urlWithUserId, messageContainer)
         messageForm.setAttribute('data-id', userId);
         messageForm.style.display = 'block';
-
-
     })
 })
 
+// Ecouteur d'évenement sur le form, qui va appeler la fonction permettant d'envoyer un message et rechargez la conversation avec le nouveau message
 messageForm.addEventListener('submit', function (event) {
     event.preventDefault();
+    const messageFormContent = document.getElementById('messageContent');
     const userId = this.getAttribute('data-id');
     const urlWithUserId = currentUrl + '/' + userId;
-    sendMessage(urlWithUserId, messageContainer)
+    sendMessage(urlWithUserId, messageContainer, messageForm, messageFormContent)
 })
-
-
-function loadFromUsersPage(idRecever, url) {
-
-}
