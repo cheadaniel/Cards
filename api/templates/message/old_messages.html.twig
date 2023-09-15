@@ -1,13 +1,24 @@
-
 {% block body %}
-    <div class="">
-        <h1>Messages</h1>
-        <div class="message-container">
-            {% for message in old_messages %}
-                <div class="message {% if message.getUserSenderId() == user_sender %}right{% else %}left{% endif %}">
-                    {{ message.content }}
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+	<div class="">
+		<h1>Messages</h1>
+		<div class="message-container">
+			{% for message in old_messages %}
+				<div class="message {% if message.getUserSenderId() == user_sender %}right{% else %}left{% endif %}">
+					{{ message.content }}
+					<span class="message-timestamp {% if message.getUserSenderId() == user_sender %}timestamp-left{% else %}timestamp-right{% endif %}">
+						{{ message.createdAt|date('F j, H:i') }}
+					</span>
+					{% if message.getUserSenderId() == user_sender %}
+						<button class="edit-message" data-id="{{ message.id }}">Modifier</button>
+					{% endif %}
+					{% if message.getUserSenderId() == user_sender %}
+
+						<a href="{{ path('delete_message', {'user_id_sender': app.user.id,'message_id':message.id}) }}" class="delete-message">
+							Supprimer
+						</a>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}

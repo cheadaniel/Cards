@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Message;
-use App\Form\MessageFormType;
 use App\Repository\MessageRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,7 +17,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class MessageController extends AbstractController
 {
 
-    #[Route('/contact/{user_id_sender}/{user_id_recever}', name: 'conversation')]
+    #[Route('/contact/{user_id_sender}/{user_id_recever}', name: 'conversation')] // Accéder à la conversation entre 2 personnes
     public function conversation($user_id_sender, $user_id_recever, UserRepository $userRepository, MessageRepository $messageRepository): Response
     {
         $oldMessages = $messageRepository->findByUsers($user_id_sender, $user_id_recever);
@@ -35,35 +34,43 @@ class MessageController extends AbstractController
 
 
     #[Route('/contact/{user_id_sender}/{user_id_recever}/message/send', name: 'send_message')]
-    public function send_message(Request $request, $user_id_sender, $user_id_recever, UserRepository $userRepository, EntityManagerInterface $entityManager) : JsonResponse
+    public function send_message(Request $request, $user_id_sender, $user_id_recever, UserRepository $userRepository, EntityManagerInterface $entityManager): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
         $content = $data['content'];
-        //pour eviter les caractéres spéciaux
+        // Pour eviter les caractéres => " ' < >
         $contentVerif = htmlspecialchars($content);
 
-        
+
         $message = new Message();
-        
+
         $user_sender = $userRepository->find($user_id_sender);
         $user_recever = $userRepository->find($user_id_recever);
-        
+
         $message->setContent($contentVerif);
         $message->setUserSenderId($user_sender);
         $message->setUserReceverId($user_recever);
-        
+
         $parisTimeZone = new DateTimeZone('Europe/Paris');
-        $createdAt = new DateTimeImmutable('now', $parisTimeZone); // Créez une nouvelle instance de DateTime avec la date et l'heure actuelles
+        $createdAt = new DateTimeImmutable('now', $parisTimeZone); // Créer une nouvelle instance de DateTime avec la date et l'heure actuelles
         $message->setCreatedAt($createdAt);
-        
+
         $entityManager->persist($message);
         $entityManager->flush();
-        
+
         // Réponse JSON indiquant le succès de l'envoi
         $response = [
             'success' => true,
             'message' => 'ok',
         ];
         return $this->json($response);
+    }
+
+    #[Route('/message/{user_id_sender}/{message_id}/delete', name: 'delete_message',  methods: ['GET'])]
+    public function delete_message(MessageRepository $messageRepository, $user_id_sender, $message_id): Response
+    {
+        $message = $messageRepository->find($message_id);
+        $messageRepository->remove($message, true);
+        return $this->redirectToRoute('contact', ['id' => $user_id_sender], Response::HTTP_SEE_OTHER);
     }
 }
