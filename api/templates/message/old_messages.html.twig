@@ -11,11 +11,13 @@
 					{% if message.getUserSenderId() == user_sender %}
 						<button class="edit-message" data-id="{{ message.id }}">Modifier</button>
 					{% endif %}
-					{% if message.getUserSenderId() == user_sender %}
 
-						<a href="{{ path('delete_message', {'user_id_sender': app.user.id,'message_id':message.id}) }}" class="delete-message">
-							Supprimer
-						</a>
+					{% if message.getUserSenderId() == user_sender %}
+						<button>
+							<a href="{{ path('delete_message', {'user_id_sender': app.user.id,'message_id':message.id}) }}" class="delete-message">
+								Supprimer
+							</a>
+						</button>
 					{% endif %}
 				</div>
 			{% endfor %}

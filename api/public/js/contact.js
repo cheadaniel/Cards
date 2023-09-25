@@ -12,6 +12,7 @@ if (idRecever) {
     fetchAndInsertData(currentUrl + '/' + idRecever, messageContainer)
     messageForm.setAttribute('data-id', idRecever);
     messageForm.style.display = 'block';
+    localStorage.removeItem("userReceverId");
 }
 
 
