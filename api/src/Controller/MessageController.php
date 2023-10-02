@@ -71,6 +71,22 @@ class MessageController extends AbstractController
     {
         $message = $messageRepository->find($message_id);
         $messageRepository->remove($message, true);
-        return $this->redirectToRoute('contact', ['id' => $user_id_sender], Response::HTTP_SEE_OTHER);
+        return new Response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    #[Route('message/edit/{message_id}', name: 'edit_message', methods: ['POST'])]
+    public function edit_message(Request $request, MessageRepository $messageRepository, $message_id, EntityManagerInterface $entityManager): JsonResponse
+    {
+
+        $data = json_decode($request->getContent(), true);
+        $content = $data['content'];
+        $message = $messageRepository->find($message_id);
+        $message->setContent($content);
+        $entityManager->flush();
+        $response = [
+            'success' => true,
+            'message' => 'ok',
+        ];
+        return $this->json($response);
     }
 }
