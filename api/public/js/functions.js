@@ -18,7 +18,7 @@ export function sendMessage(url, container, form, messageForm) {
         method: 'POST',
         body: JSON.stringify({ content }),
         headers: {
-            'Content-Type': 'application/json', 
+            'Content-Type': 'application/json',
         },
     })
         .then(response => response.json())
@@ -41,23 +41,35 @@ export function sendMessage(url, container, form, messageForm) {
 
 export function sendMessageFromUsers(messageForm, idSender, idRecever) {
     const content = messageForm.value;
-    
-    fetch(/contact/ + `${ idSender }` + '/' + `${ idRecever }` + '/message/send', {
+
+    fetch(/contact/ + `${idSender}` + '/' + `${idRecever}` + '/message/send', {
         method: 'POST',
         body: JSON.stringify({ content }),
         headers: {
-            'Content-Type': 'application/json', 
+            'Content-Type': 'application/json',
         },
     })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
                 // Rediriger l'utilisateur vers la page de contact, en stockant l'id du destinataire afin d'afficher directement la conversation
-                localStorage.setItem('userReceverId', idRecever);
+                //localStorage.setItem('userReceverId', idRecever);
                 window.location.href = `/contact/${idSender}`;
-            } 
+            }
         })
         .catch(error => {
             console.error('Erreur réseau', error);
         });
+}
+
+export function editMessage(idMessage, newContent) {
+    return fetch(`/message/edit/${idMessage}`, {
+        method: 'POST',
+        body: JSON.stringify({ content: newContent }),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(response => response.json());
+
 }
