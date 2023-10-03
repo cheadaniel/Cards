@@ -31,7 +31,7 @@ class GameController extends AbstractController
 
         return $this->render('game/game.html.twig', [
             'gameName' => $gameName,
-            'extensions'=>$extensions,
+            'extensions' => $extensions,
         ]);
     }
 
@@ -61,7 +61,7 @@ class GameController extends AbstractController
         $game = $gameRepository->findByGameName($gameName);
 
         if (!$game) { //verifier si le jeu existe et rediriger si ce n'est pas le cas
-            return $this->redirectToRoute('games'); 
+            return $this->redirectToRoute('games');
         }
         // il faut au préalable supprimer toutes les extensions, les cartes, les commentaires, les deck et collections associées
         // $this->deleteExtensionsAndRelatedData($game, $entityManager);
@@ -73,5 +73,20 @@ class GameController extends AbstractController
         //dd($game);
         $gameRepository->remove($game, true);
         return $this->redirectToRoute('games');
+    }
+
+    #[Route('admin/games/edit/{gameName}', name: 'edit_game', methods: ['GET', 'POST'])]
+    public function edit_game(Request $request, EntityManagerInterface $entityManager, GameRepository $gameRepository, $gameName): Response
+    {
+        $post = $gameRepository->findByGameName($gameName);
+        $form = $this->createForm(gameFormType::class, $post);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+            return $this->redirectToRoute('games');
+        }
+        return $this->render('game/editGame.html.twig', [
+            'gameForm' => $form->createView(),
+        ]);
     }
 }
