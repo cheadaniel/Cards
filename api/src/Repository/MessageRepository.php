@@ -45,7 +45,7 @@ class MessageRepository extends ServiceEntityRepository
             ->andWhere('(m.User_sender_id = :user1 AND m.User_recever_id = :user2) OR (m.User_sender_id = :user2 AND m.User_recever_id = :user1)')
             ->setParameter('user1', $user1Id)
             ->setParameter('user2', $user2Id)
-            ->orderBy('m.CreatedAt', 'ASC')
+            ->orderBy('m.id', 'ASC')
             ->getQuery()
             ->getResult();
     }

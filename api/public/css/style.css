@@ -1,6 +1,7 @@
+
 /* Styles CSS pour aligner les messages de l'expéditeur à droite */
 .message {
-    margin : 0.5rem 0
+    margin: 0.5rem 0
 }
 
 .message.right {

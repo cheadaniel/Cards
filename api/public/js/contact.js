@@ -51,6 +51,7 @@ messageContainer.addEventListener('click', function (event) {
         }
     }
 
+    // Ecouteur d'évèment sur les boutons modifier afin qu'ils affichent un formulaire contenant le message a modifier
     if (event.target.classList.contains('edit-message')) {
         const messageId = event.target.getAttribute('data-id');
         const editForm = document.querySelector(`.edit-form[data-id="${messageId}"]`);
@@ -63,6 +64,7 @@ messageContainer.addEventListener('click', function (event) {
         }
     }
 
+    // Ecouteur sur l'envoi du formulaire
     if (event.target.classList.contains('save-edit')) {
         const messageId = event.target.getAttribute('data-id');
         const editForm = document.querySelector(`.edit-form[data-id="${messageId}"]`);
@@ -72,12 +74,11 @@ messageContainer.addEventListener('click', function (event) {
 
 
         if (editForm && messageContent) {
-            // Obtenez la nouvelle valeur du contenu du message à partir du formulaire
+            // Nouvelle valeur du contenu du message à partir du formulaire
             const updatedContent = editForm.querySelector('textarea[name="edit-content"]').value;
-            console.log(updatedContent);
 
-            // Effectuez une requête POST pour mettre à jour le message
-            editMessage(messageId,updatedContent)
+            // Appel de la fonction pour effectuer la requête ajax qui modifiera le message associé 
+            editMessage(messageId, updatedContent)
                 .then(data => {
                     if (data.success) {
                         messageContent.textContent = updatedContent;

@@ -74,15 +74,20 @@ class MessageController extends AbstractController
         return new Response(null, Response::HTTP_NO_CONTENT);
     }
 
-    #[Route('message/edit/{message_id}', name: 'edit_message', methods: ['POST'])]
+    #[Route('message/edit/{message_id}', name: 'edit_message', methods: ['GET', 'POST'])]
     public function edit_message(Request $request, MessageRepository $messageRepository, $message_id, EntityManagerInterface $entityManager): JsonResponse
     {
 
         $data = json_decode($request->getContent(), true);
         $content = $data['content'];
+
         $message = $messageRepository->find($message_id);
         $message->setContent($content);
+        $parisTimeZone = new DateTimeZone('Europe/Paris');
+        $createdAt = new DateTimeImmutable('now', $parisTimeZone); // Créer une nouvelle instance de DateTime avec la date et l'heure actuelles
+        $message->setCreatedAt($createdAt);
         $entityManager->flush();
+
         $response = [
             'success' => true,
             'message' => 'ok',
