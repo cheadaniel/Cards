@@ -4,10 +4,10 @@
 		<div class="message-container">
 			{% for message in old_messages %}
 				<div class="message {% if message.getUserSenderId() == user_sender %}right{% else %}left{% endif %}" data-id="{{ message.id }}">
-					<p class="content">{{ message.content }}</p>
 					<span class="message-timestamp {% if message.getUserSenderId() == user_sender %}timestamp-left{% else %}timestamp-right{% endif %}">
 						{{ message.createdAt|date('F j, H:i') }}
 					</span>
+					<p class="content">{{ message.content }}</p>
 					{% if message.getUserSenderId() == user_sender %}
 						<button class="edit-message" data-id="{{ message.id }}">Modifier</button>
 						<form class="edit-form" data-id="{{ message.id }}" method="POST">
