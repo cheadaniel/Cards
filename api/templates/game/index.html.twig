@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Games
+{% endblock %}
+
+{% block body %}
+
+	<h1>Games</h1>
+
+    <div class="new-game">
+        <a href="{{ path('create_game')}}">Nouveau jeu + </a>
+    </div>
+	<div class="game-container">
+		{% for game in games %}
+			<a href="{{ path('game', {'gameName': game.name}) }}">
+				<div class="game">
+					<img src="{{ game.image }}" alt="{{ game.image }}" class="game_img">
+					{{ game.name }}
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+{% endblock %}
