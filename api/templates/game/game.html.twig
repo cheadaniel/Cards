@@ -1,9 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} {{game}}
+{% block title %}
+	{{gameName}}
 {% endblock %}
 
 {% block body %}
 
-	{{game}}
+	<h1>
+		{{gameName}}
+	</h1>
+	{# mettre une secu pour l'admin seulement  #}
+	<div class="new-extension">
+		<a href="{{ path('create_extension', {'gameName': gameName})}}">Nouvelle extension +
+		</a>
+	</div>
+	<div class="extension-container">
+		{% for extension in extensions %}
+			{# <a href="{{ path('extension', {'extensionName': extension.name}) }}" class="extension"> #}
+				<div>
+					<img src="{{ extension.image }}" alt="{{ extension.name }}" class="extension_img">
+					<p class="extension-name">{{ extension.name }}</p>
+				</div>
+			{# </a> #}
+			{# <a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
+				Supprimer
+			</a> #}
+		{% endfor %}
+	</div>
 {% endblock %}

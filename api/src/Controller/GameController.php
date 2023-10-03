@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Game;
 use App\Form\GameFormType;
+use App\Repository\ExtensionRepository;
 use App\Repository\GameRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,15 +25,17 @@ class GameController extends AbstractController
     }
 
     #[Route('/games/{gameName}', name: 'game')]
-    public function game($gameName): Response
+    public function game($gameName, ExtensionRepository $extensionRepository): Response
     {
+        $extensions = $extensionRepository->findAll();
 
         return $this->render('game/game.html.twig', [
-            'game' => $gameName,
+            'gameName' => $gameName,
+            'extensions'=>$extensions,
         ]);
     }
 
-    #[Route('admin/games/create', name:'create_game')]
+    #[Route('admin/games/create', name: 'create_game')]
     public function create_game(Request $request, EntityManagerInterface $entityManager): Response
     {
         $game = new Game();
@@ -44,11 +47,31 @@ class GameController extends AbstractController
             $entityManager->persist($game);
             $entityManager->flush();
             return $this->redirectToRoute('games');
-        } 
+        }
 
 
         return $this->render('game/createGame.html.twig', [
             'gameForm' => $form->createView(),
         ]);
+    }
+
+    #[Route('admin/games/delete/{gameName}', name: 'delete_game',  methods: ['GET'])]
+    public function delete_game(GameRepository $gameRepository, $gameName): Response
+    {
+        $game = $gameRepository->findByGameName($gameName);
+
+        if (!$game) { //verifier si le jeu existe et rediriger si ce n'est pas le cas
+            return $this->redirectToRoute('games'); 
+        }
+        // il faut au préalable supprimer toutes les extensions, les cartes, les commentaires, les deck et collections associées
+        // $this->deleteExtensionsAndRelatedData($game, $entityManager);
+        // $this->deleteCardsAndRelatedData($game, $entityManager);
+        // $this->deleteCommentsAndRelatedData($game, $entityManager);
+        // $this->deleteDecksAndRelatedData($game, $entityManager);
+        // $this->deleteCollectionsAndRelatedData($game, $entityManager);
+
+        //dd($game);
+        $gameRepository->remove($game, true);
+        return $this->redirectToRoute('games');
     }
 }

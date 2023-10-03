@@ -21,8 +21,8 @@ class GameFormType extends AbstractType
             'label' => 'Url de l\'image'
         ])
         ->add("Envoyer", SubmitType::class, [
-            'label' => 'Envoyer',
-        ]);
+            'label' => 'Créer',
+        ])
         ;
     }
 

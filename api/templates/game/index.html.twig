@@ -6,17 +6,21 @@
 {% block body %}
 
 	<h1>Games</h1>
-
-    <div class="new-game">
-        <a href="{{ path('create_game')}}">Nouveau jeu + </a>
-    </div>
+	{# mettre une secu pour l'admin seulement  #}
+	<div class="new-game">
+		<a href="{{ path('create_game')}}">Nouveau jeu +
+		</a>
+	</div>
 	<div class="game-container">
 		{% for game in games %}
-			<a href="{{ path('game', {'gameName': game.name}) }}">
-				<div class="game">
-					<img src="{{ game.image }}" alt="{{ game.image }}" class="game_img">
-					{{ game.name }}
+			<a href="{{ path('game', {'gameName': game.name}) }}" class="game">
+				<div>
+					<img src="{{ game.image }}" alt="{{ game.name }}" class="game_img">
+					<p class="game-name">{{ game.name }}</p>
 				</div>
+			</a>
+			<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
+				Supprimer
 			</a>
 		{% endfor %}
 	</div>

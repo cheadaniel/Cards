@@ -5,9 +5,12 @@ namespace App\Entity;
 use App\Repository\ExtensionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: ExtensionRepository::class)]
+#[UniqueEntity(fields: ['Name'], message: 'Ce nom est déjà utilisé, veuillez en choisir un autre')]
 class Extension
 {
     #[ORM\Id]
@@ -30,6 +33,9 @@ class Extension
 
     #[ORM\OneToMany(mappedBy: 'Extension_id', targetEntity: ExtensionCollection::class, orphanRemoval: true)]
     private Collection $Extension_ExtensionCollection_id;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $Image = null;
 
     public function __construct()
     {
@@ -134,6 +140,18 @@ class Extension
                 $extensionExtensionCollectionId->setExtensionId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->Image;
+    }
+
+    public function setImage(?string $Image): static
+    {
+        $this->Image = $Image;
 
         return $this;
     }
