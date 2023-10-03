@@ -51,4 +51,13 @@ class GameController extends AbstractController
             'gameForm' => $form->createView(),
         ]);
     }
+
+    #[Route('admin/games/delete/{gameName}', name: 'delete_game',  methods: ['GET'])]
+    public function delete_game(GameRepository $gameRepository, $gameName): Response
+    {
+        $game = $gameRepository->findByGameName($gameName);
+        //dd($game);
+        $gameRepository->remove($game, true);
+        return $this->redirectToRoute('games');
+    }
 }
