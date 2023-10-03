@@ -30,6 +30,9 @@ class Game
     #[ORM\OneToMany(mappedBy: 'Game_id', targetEntity: Card::class, orphanRemoval: true)]
     private Collection $Game_card_id;
 
+    #[ORM\Column(length: 128, nullable: true)]
+    private ?string $Image = null;
+
     public function __construct()
     {
         $this->Game_deck_id = new ArrayCollection();
@@ -171,6 +174,18 @@ class Game
                 $gameCardId->setGameId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->Image;
+    }
+
+    public function setImage(?string $Image): static
+    {
+        $this->Image = $Image;
 
         return $this;
     }
