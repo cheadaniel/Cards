@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Extension;
 use App\Form\ExtensionFormType;
+use App\Repository\ExtensionRepository;
 use App\Repository\GameRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,6 +45,33 @@ class ExtensionController extends AbstractController
 
 
         return $this->render('extension/createExtension.html.twig', [
+            'extensionForm' => $form->createView(),
+        ]);
+    }
+
+    #[Route('admin/games/{gameName}/{extensionName}/delete', name: 'delete_extension',  methods: ['GET'])]
+    public function delete_game(ExtensionRepository $extensionRepository, $gameName, $extensionName): Response
+    {
+        $extension = $extensionRepository->findByExtensionName($extensionName);
+
+        if (!$extension) { //verifier si le jeu existe et rediriger si ce n'est pas le cas
+            return $this->redirectToRoute('game', ['gameName' => $gameName]);
+        }
+        $extensionRepository->remove($extension, true);
+        return $this->redirectToRoute('game', ['gameName' => $gameName]);
+    }
+
+    #[Route('admin/games/{gameName}/{extensionName}/edit', name: 'edit_extension', methods: ['GET', 'POST'])]
+    public function edit_extension(Request $request, EntityManagerInterface $entityManager, ExtensionRepository $extensionRepository, $gameName, $extensionName): Response
+    {
+        $post = $extensionRepository->findByExtensionName($extensionName);
+        $form = $this->createForm(ExtensionFormType::class, $post);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+            return $this->redirectToRoute('game', ['gameName' => $gameName]);
+        }
+        return $this->render('extension/editExtension.html.twig', [
             'extensionForm' => $form->createView(),
         ]);
     }
