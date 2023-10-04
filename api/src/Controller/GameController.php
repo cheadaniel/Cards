@@ -6,6 +6,7 @@ use App\Entity\Game;
 use App\Form\GameFormType;
 use App\Repository\ExtensionRepository;
 use App\Repository\GameRepository;
+use App\Service\GameCascadeDeletionService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -56,7 +57,7 @@ class GameController extends AbstractController
     }
 
     #[Route('admin/games/delete/{gameName}', name: 'delete_game',  methods: ['GET'])]
-    public function delete_game(GameRepository $gameRepository, $gameName): Response
+    public function delete_game(GameRepository $gameRepository, $gameName, GameCascadeDeletionService $gameCascadeDeletionService): Response
     {
         $game = $gameRepository->findByGameName($gameName);
 
@@ -64,7 +65,7 @@ class GameController extends AbstractController
             return $this->redirectToRoute('games');
         }
         // il faut au préalable supprimer toutes les extensions, les cartes, les commentaires, les deck et collections associées
-        // $this->deleteExtensionsAndRelatedData($game, $entityManager);
+        $gameCascadeDeletionService->deleteExtensions($game);
         // $this->deleteCardsAndRelatedData($game, $entityManager);
         // $this->deleteCommentsAndRelatedData($game, $entityManager);
         // $this->deleteDecksAndRelatedData($game, $entityManager);

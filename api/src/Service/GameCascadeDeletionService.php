@@ -23,9 +23,9 @@ class GameCascadeDeletionService
     {
         // Supprimer les extensions, les cartes et autres entités en cascade
         $this->deleteExtensions($game);
-        $this->deleteDecks($game);
-        $this->deleteCollections($game);
-        $this->deleteComments($game);
+        // $this->deleteDecks($game);
+        // $this->deleteCollections($game);
+        // $this->deleteComments($game);
 
         // Enfin, supprimez le jeu lui-même
         $this->entityManager->remove($game);
@@ -38,7 +38,7 @@ class GameCascadeDeletionService
 
         foreach ($extensions as $extension) {
             // Supprimez les cartes liées à cette extension
-            $this->deleteCardsForExtension($extension);
+            // $this->deleteCardsForExtension($extension);
 
             // Supprimez l'extension
             $this->entityManager->remove($extension);

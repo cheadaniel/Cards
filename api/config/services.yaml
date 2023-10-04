@@ -20,5 +20,10 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Service\GameCascadeDeletionService:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+        tags: { name: 'app.game_cascade_deletion'}
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
