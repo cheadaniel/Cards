@@ -28,7 +28,7 @@ class GameController extends AbstractController
     #[Route('/games/{gameName}', name: 'game')]
     public function game($gameName, ExtensionRepository $extensionRepository): Response
     {
-        $extensions = $extensionRepository->findAll();
+        $extensions = $extensionRepository->findExtensionsByGameName($gameName);
 
         return $this->render('game/game.html.twig', [
             'gameName' => $gameName,
