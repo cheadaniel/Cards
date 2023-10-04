@@ -19,12 +19,15 @@
 					<p class="game-name">{{ game.name }}</p>
 				</div>
 			</a>
-			<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
-				Supprimer
-			</a>
-			<a href="{{ path('edit_game', {'gameName': game.name}) }}" class="edit-game">
-				Modifier
-			</a>
+			<div class="admin-button">
+				<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
+					Supprimer
+				</a>
+				<a href="{{ path('edit_game', {'gameName': game.name}) }}" class="edit-game">
+					Modifier
+				</a>
+			</div>
+
 		{% endfor %}
 	</div>
 {% endblock %}
