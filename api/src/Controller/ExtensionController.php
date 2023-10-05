@@ -14,11 +14,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ExtensionController extends AbstractController
 {
-    #[Route('/extension', name: 'app_extension')]
-    public function index(): Response
+    #[Route('games/{gameName}/{extensionName}/', name: 'extension')]
+    public function index($gameName,$extensionName): Response
     {
         return $this->render('extension/index.html.twig', [
-            'controller_name' => 'ExtensionController',
+            'gameName' => $gameName,
+            'extensionName' =>$extensionName,
         ]);
     }
 
