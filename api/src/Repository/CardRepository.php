@@ -39,28 +39,49 @@ class CardRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Card[] Returns an array of Card objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findByCardName(string $cardName)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.Name = :cardName')
+            ->setParameter('cardName', $cardName)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 
-//    public function findOneBySomeField($value): ?Card
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findCardsByGameAndExtension(string $gameName, string $extensionName)
+    {
+        return $this->createQueryBuilder('c')
+            ->innerJoin('c.Game_id', 'g')
+            ->innerJoin('c.Extension_id', 'e')
+            ->where('g.Name = :gameName')
+            ->andWhere('e.Name = :extensionName')
+            ->setParameters(['gameName' => $gameName, 'extensionName' => $extensionName])
+            ->getQuery()
+            ->getResult();
+    }
+
+    //    /**
+    //     * @return Card[] Returns an array of Card objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('c')
+    //            ->andWhere('c.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('c.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?Card
+    //    {
+    //        return $this->createQueryBuilder('c')
+    //            ->andWhere('c.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

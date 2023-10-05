@@ -1,0 +1,542 @@
+[
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Tumulte sur Oligar",
+  "image": "Lyceran.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lyceran",
+  "name": "Lyceran",
+  "number": "01\/54",
+  "rarity": "Champion",
+  "type": "Force - Résistance"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Tumulte sur Oligar",
+  "image": "Daeris.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Daeris",
+  "name": "Daeris",
+  "number": "02\/54",
+  "rarity": "Champion",
+  "type": "Timer - Intelligence"
+ },
+ {
+  "artist": "Thomas Rome",
+  "extension": "Tumulte sur Oligar",
+  "image": "Frappe Cuirasse.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_Cuirass%C3%A9e",
+  "name": "Frappe Cuirassée",
+  "number": "03\/54",
+  "rarity": "Commune",
+  "type": "Attaque résistance"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Tumulte sur Oligar",
+  "image": "Rcupration dArmure.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/R%C3%A9cup%C3%A9ration_d%27Armure",
+  "name": "Récupération d'Armure",
+  "number": "04\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique - résistance"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Impact Violent.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Impact_Violent",
+  "name": "Impact Violent",
+  "number": "05\/54",
+  "rarity": "Commune",
+  "type": "Attaque résistance"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Tumulte sur Oligar",
+  "image": "Coup de Bouclier.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Coup_de_Bouclier",
+  "name": "Coup de Bouclier",
+  "number": "06\/54",
+  "rarity": "Commune",
+  "type": "Attaque résistance"
+ },
+ {
+  "artist": "David Benzal",
+  "extension": "Tumulte sur Oligar",
+  "image": "Rsorber lExistence.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/R%C3%A9sorber_l%27Existence",
+  "name": "Résorber l'Existence",
+  "number": "07\/54",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Inkognit",
+  "extension": "Tumulte sur Oligar",
+  "image": "Attaque Anticipe.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Attaque_Anticip%C3%A9e",
+  "name": "Attaque Anticipée",
+  "number": "08\/54",
+  "rarity": "Rare",
+  "type": "Attaque résistance"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Tumulte sur Oligar",
+  "image": "Prescience.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Prescience",
+  "name": "Prescience",
+  "number": "09\/54",
+  "rarity": "Rare",
+  "type": "Attaque résistance"
+ },
+ {
+  "artist": "Gaël Giudicelli",
+  "extension": "Tumulte sur Oligar",
+  "image": "Frappe des Trfonds.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_des_Tr%C3%A9fonds",
+  "name": "Frappe des Tréfonds",
+  "number": "10\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque physique - résistance"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Garde Fracassante.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Garde_Fracassante",
+  "name": "Garde Fracassante",
+  "number": "11\/54",
+  "rarity": "Commune",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Guillaume Ducos",
+  "extension": "Tumulte sur Oligar",
+  "image": "Mur Inbranlable.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Mur_In%C3%A9branlable",
+  "name": "Mur Inébranlable",
+  "number": "12\/54",
+  "rarity": "Commune",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Inkognit",
+  "extension": "Tumulte sur Oligar",
+  "image": "Tenir Position.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Tenir_Position",
+  "name": "Tenir Position",
+  "number": "13\/54",
+  "rarity": "Rare",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Tumulte sur Oligar",
+  "image": "Entretien.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Entretien",
+  "name": "Entretien",
+  "number": "14\/54",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "lixir de Lanoc.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89lixir_de_Lanoc",
+  "name": "Élixir de Lanoc",
+  "number": "15\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Quentin Castel",
+  "extension": "Tumulte sur Oligar",
+  "image": "Neutralisation.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Neutralisation",
+  "name": "Neutralisation",
+  "number": "16\/54",
+  "rarity": "Rare",
+  "type": "Annulation"
+ },
+ {
+  "artist": "Quentin de Warren",
+  "extension": "Tumulte sur Oligar",
+  "image": "Rsistance Naturelle.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/R%C3%A9sistance_Naturelle",
+  "name": "Résistance Naturelle",
+  "number": "17\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Tumulte sur Oligar",
+  "image": "Dmantlement.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/D%C3%A9mant%C3%A8lement",
+  "name": "Démantèlement",
+  "number": "18\/54",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Guillaume Ducos",
+  "extension": "Tumulte sur Oligar",
+  "image": "Fulgurance Temporelle.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Fulgurance_Temporelle",
+  "name": "Fulgurance Temporelle",
+  "number": "19\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique-timer"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Tumulte sur Oligar",
+  "image": "Vive-Sphre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Vive-Sph%C3%A8re",
+  "name": "Vive-Sphère",
+  "number": "20\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Tumulte sur Oligar",
+  "image": "Ricochet Temporel.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ricochet_Temporel",
+  "name": "Ricochet Temporel",
+  "number": "21\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Tumulte sur Oligar",
+  "image": "Frappe de Srnit.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_de_S%C3%A9r%C3%A9nit%C3%A9",
+  "name": "Frappe de Sérénité",
+  "number": "22\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "David Benzal",
+  "extension": "Tumulte sur Oligar",
+  "image": "Sphre de Temporalit.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Sph%C3%A8re_de_Temporalit%C3%A9",
+  "name": "Sphère de Temporalité",
+  "number": "23\/54",
+  "rarity": "Rare",
+  "type": "Attaque magique - timer"
+ },
+ {
+  "artist": "Gaël Giudicelli",
+  "extension": "Tumulte sur Oligar",
+  "image": "Larcin Temporel.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Larcin_Temporel",
+  "name": "Larcin Temporel",
+  "number": "24\/54",
+  "rarity": "Rare",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Tumulte sur Oligar",
+  "image": "Riposte clatante.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Riposte_%C3%89clatante",
+  "name": "Riposte Éclatante",
+  "number": "25\/54",
+  "rarity": "Rare",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Inkognit",
+  "extension": "Tumulte sur Oligar",
+  "image": "Tempte de Nve.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Temp%C3%AAte_de_N%C3%B6ve",
+  "name": "Tempête de Növe",
+  "number": "26\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque magique - timer"
+ },
+ {
+  "artist": "Quentin de Warren",
+  "extension": "Tumulte sur Oligar",
+  "image": "Bouclier de Nve.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Bouclier_de_N%C3%B6ve",
+  "name": "Bouclier de Növe",
+  "number": "27\/54",
+  "rarity": "Commune",
+  "type": "Protection magique - timer"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Contre-Attaque Temporelle.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Contre-Attaque_Temporelle",
+  "name": "Contre-Attaque Temporelle",
+  "number": "28\/54",
+  "rarity": "Commune",
+  "type": "Protection magique - Attaque timer"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Tumulte sur Oligar",
+  "image": "Anticipation.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Anticipation",
+  "name": "Anticipation",
+  "number": "29\/54",
+  "rarity": "Rare",
+  "type": "Protection magique"
+ },
+ {
+  "artist": "Thomas Rome",
+  "extension": "Tumulte sur Oligar",
+  "image": "Contact Ptrifiant.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Contact_P%C3%A9trifiant",
+  "name": "Contact Pétrifiant",
+  "number": "30\/54",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Linceul du Temps.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Linceul_du_Temps",
+  "name": "Linceul du Temps",
+  "number": "31\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Quentin de Warren",
+  "extension": "Tumulte sur Oligar",
+  "image": "lixir dEleknar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89lixir_d%27Eleknar",
+  "name": "Élixir d'Eleknar",
+  "number": "32\/54",
+  "rarity": "Rare",
+  "type": "Quentin de Warren"
+ },
+ {
+  "artist": "Quentin Castel",
+  "extension": "Tumulte sur Oligar",
+  "image": "Faille Temporelle.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Faille_Temporelle",
+  "name": "Faille Temporelle",
+  "number": "33\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Tumulte sur Oligar",
+  "image": "Catalyseur de Nve.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Catalyseur_de_N%C3%B6ve",
+  "name": "Catalyseur de Növe",
+  "number": "34\/54",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Quentin de Warren",
+  "extension": "Tumulte sur Oligar",
+  "image": "Mempamor.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Mempamor",
+  "name": "Mempamor",
+  "number": "35\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Kouvicieu.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Kouvicieu",
+  "name": "Kouvicieu",
+  "number": "36\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Volte-Face.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Volte-Face",
+  "name": "Volte-Face",
+  "number": "37\/54",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Tumulte sur Oligar",
+  "image": "Assaut Pernicieux.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Assaut_Pernicieux",
+  "name": "Assaut Pernicieux",
+  "number": "38\/54",
+  "rarity": "Rare",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Ramure Foudroyante.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ramure_Foudroyante",
+  "name": "Ramure Foudroyante",
+  "number": "39\/54",
+  "rarity": "Rare",
+  "type": "Attaque magique - timer"
+ },
+ {
+  "artist": "Guillaume Ducos",
+  "extension": "Tumulte sur Oligar",
+  "image": "Givre-Feu.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Givre-Feu",
+  "name": "Givre-Feu",
+  "number": "40\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Xavier RIbeiro",
+  "extension": "Tumulte sur Oligar",
+  "image": " Attrape  .jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C2%AB_Attrape_!_%C2%BB",
+  "name": "« Attrape ! »",
+  "number": "41\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Tumulte sur Oligar",
+  "image": "crasement.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89crasement",
+  "name": "Écrasement",
+  "number": "42\/54",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Pointes de Feu.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Pointes_de_Feu",
+  "name": "Pointes de Feu",
+  "number": "43\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Inkognit",
+  "extension": "Tumulte sur Oligar",
+  "image": "Forme Primordiale.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Forme_Primordiale",
+  "name": "Forme Primordiale",
+  "number": "44\/54",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Frappe Sacre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_Sacr%C3%A9e",
+  "name": "Frappe Sacrée",
+  "number": "45\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Tumulte sur Oligar",
+  "image": "Lumin-Ailes.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lumin-Ailes",
+  "name": "Lumin-Ailes",
+  "number": "46\/54",
+  "rarity": "Rare",
+  "type": "Défense hybride"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Tumulte sur Oligar",
+  "image": "Rsilience.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/R%C3%A9silience",
+  "name": "Résilience",
+  "number": "47\/54",
+  "rarity": "Commune",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Tumulte sur Oligar",
+  "image": "Pnitence.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/P%C3%A9nitence",
+  "name": "Pénitence",
+  "number": "48\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Tumulte sur Oligar",
+  "image": "Leon de la Chute Sacre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Le%C3%A7on_de_la_Chute_Sacr%C3%A9e",
+  "name": "Leçon de la Chute Sacrée",
+  "number": "49\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Jordy Wedding",
+  "extension": "Tumulte sur Oligar",
+  "image": "Vengeance Embrase.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Vengeance_Embras%C3%A9e",
+  "name": "Vengeance Embrasée",
+  "number": "50\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Tumulte sur Oligar",
+  "image": "Pluie de Flammes.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Pluie_de_Flammes",
+  "name": "Pluie de Flammes",
+  "number": "51\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Tumulte sur Oligar",
+  "image": "Feu Purificateur.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Feu_Purificateur",
+  "name": "Feu Purificateur",
+  "number": "52\/54",
+  "rarity": "Rare",
+  "type": "Protection magique"
+ },
+ {
+  "artist": "Ørjan Svendsen",
+  "extension": "Tumulte sur Oligar",
+  "image": "Lutte Tumulte sur Oligar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lutte_(Tumulte_sur_Oligar)",
+  "name": "Lutte (Tumulte sur Oligar)",
+  "number": "53\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Ørjan Svendsen",
+  "extension": "Tumulte sur Oligar",
+  "image": "Souffle de Volont Tumulte sur Oligar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Souffle_de_Volont%C3%A9_(Tumulte_sur_Oligar)",
+  "name": "Souffle de Volonté (Tumulte sur Oligar)",
+  "number": "54\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ }
+]

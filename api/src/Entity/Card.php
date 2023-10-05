@@ -7,8 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: CardRepository::class)]
+#[UniqueEntity(fields: ['Name'], message: 'Ce nom est déjà utilisé, veuillez en choisir un autre')]
 class Card
 {
     #[ORM\Id]

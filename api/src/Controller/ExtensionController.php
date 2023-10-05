@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Extension;
 use App\Form\ExtensionFormType;
+use App\Repository\CardRepository;
 use App\Repository\ExtensionRepository;
 use App\Repository\GameRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -14,11 +15,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ExtensionController extends AbstractController
 {
-    #[Route('/extension', name: 'app_extension')]
-    public function index(): Response
+    #[Route('games/{gameName}/{extensionName}/', name: 'extension')]
+    public function index($gameName, $extensionName, CardRepository $cardRepository): Response
     {
+        $cards = $cardRepository->findCardsByGameAndExtension($gameName, $extensionName);
+        //dd($cards); 
+
         return $this->render('extension/index.html.twig', [
-            'controller_name' => 'ExtensionController',
+            'gameName' => $gameName,
+            'extensionName' => $extensionName,
+            'cards' => $cards,
         ]);
     }
 
@@ -50,7 +56,7 @@ class ExtensionController extends AbstractController
     }
 
     #[Route('admin/games/{gameName}/{extensionName}/delete', name: 'delete_extension',  methods: ['GET'])]
-    public function delete_game(ExtensionRepository $extensionRepository, $gameName, $extensionName): Response
+    public function delete_extension(ExtensionRepository $extensionRepository, $gameName, $extensionName): Response
     {
         $extension = $extensionRepository->findByExtensionName($extensionName);
 

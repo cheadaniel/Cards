@@ -48,6 +48,16 @@ class ExtensionRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
+    public function findExtensionsByGameName(string $gameName)
+    {
+        return $this->createQueryBuilder('e')
+            ->innerJoin('e.Game_id', 'g')
+            ->andWhere('g.Name = :gameName')
+            ->setParameter('gameName', $gameName)
+            ->getQuery()
+            ->getResult();
+    }
+
     //    /**
     //     * @return Extension[] Returns an array of Extension objects
     //     */

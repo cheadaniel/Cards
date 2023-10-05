@@ -16,12 +16,12 @@
 	</div>
 	<div class="extension-container">
 		{% for extension in extensions %}
-			{# <a href="{{ path('extension', {'extensionName': extension.name}) }}" class="extension"> #}
-			<div>
-				<img src="{{ extension.image }}" alt="{{ extension.name }}" class="extension_img">
-				<p class="extension-name">{{ extension.name }}</p>
-			</div>
-			{# </a> #}
+			<a href="{{ path('extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="extension">
+				<div>
+					<img src="{{ extension.image }}" alt="{{ extension.name }}" class="extension_img">
+					<p class="extension-name">{{ extension.name }}</p>
+				</div>
+			</a>
 			<div class="admin-button">
 				<a href="{{ path('delete_extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="delete-extension">
 					Supprimer
