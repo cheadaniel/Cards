@@ -39,14 +39,23 @@ class CardRepository extends ServiceEntityRepository
         }
     }
 
-    public function findCardsByExtensionNameAndGameName(string $extensionName, $gameName)
+    public function findByCardName(string $cardName)
     {
         return $this->createQueryBuilder('c')
-            ->innerJoin('c.Extension_id', 'e')
+            ->andWhere('c.Name = :cardName')
+            ->setParameter('cardName', $cardName)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    public function findCardsByGameAndExtension(string $gameName, string $extensionName)
+    {
+        return $this->createQueryBuilder('c')
             ->innerJoin('c.Game_id', 'g')
+            ->innerJoin('c.Extension_id', 'e')
+            ->where('g.Name = :gameName')
             ->andWhere('e.Name = :extensionName')
-            ->andWhere('g.Name = :gameName')
-            ->setParameters(['extensionName' => $extensionName, 'gameName' => $gameName])
+            ->setParameters(['gameName' => $gameName, 'extensionName' => $extensionName])
             ->getQuery()
             ->getResult();
     }

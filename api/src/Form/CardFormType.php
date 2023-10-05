@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Card;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -34,6 +35,9 @@ class CardFormType extends AbstractType
             ])
             ->add('Type', TextType::class, [
                 'label' => 'Type'
+            ])
+            ->add("Envoyer", SubmitType::class, [
+                'label' => 'Créer',
             ]);
     }
 

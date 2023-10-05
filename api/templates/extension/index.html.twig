@@ -5,9 +5,35 @@
 {% endblock %}
 
 {% block body %}
+	<h2>{{extensionName}}</h2>
 
+	<div class="new-card">
+		<a href="{{ path('create_card', {'gameName': gameName, 'extensionName': extensionName})}}">Nouvelle carte +
+		</a>
+	</div>
+	<div class="card-container">
+		{% for card in cards %}
 
-	<div>
-		{{extensionName}}
+			<div class="card-cart">
+				<div>
+					<p class="card-name">{{ card.name }}</p>
+					<img src="{{ card.image }}" alt="{{ card.name }}" class="card_img">
+				</div>
+				<div>
+					<button>-</button>
+					<button>{# <a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link"> </a> #}</button>
+					<button>+</button>
+				</div>
+			</div>
+
+			<div class="admin-button">
+				<a href="{{ path('delete_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="delete-card">
+					Supprimer
+				</a>
+				{# <a href="{{ path('edit_card', {'gameName': gameName, 'extensionName':extension.name,'cardName' : card.name}) }}" class="edit-card">
+																		Modifier
+																	</a> #}
+			</div>
+		{% endfor %}
 	</div>
 {% endblock %}
