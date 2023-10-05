@@ -1,0 +1,730 @@
+[
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "description": "Originaire de la terre insulaire des astragues, cette guerrière aussi vive que fatale est prête à en découdre. Elle vengera son peuple en découpant avec soin les iffrits qui croiseront son chemin !\"",
+  "extension": 2,
+  "image": "Vive-Lame de Maden.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Vive-Lame_de_Maden",
+  "name": "Vive-Lame de Maden",
+  "number": "01\/70",
+  "rarity": "Champion",
+  "type": "Force"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "description": "Semant le chaos et ne laissant que des cendres derrière elle, la Nilvinh déborde d’une énergie bouillonnante. On raconte qu’un seul de ces iffrits pourraient réduire en cendre des lieues et des lieues de forêts par sa simple présence. Leur corps en fusion est un danger pour quiconque s’en approche. D’un simple toucher ardent, elle peut embraser n’importe quelle matière.",
+  "extension": 2,
+  "image": "Nilvinh.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Nilvinh",
+  "name": "Nilvinh",
+  "number": "02\/70",
+  "rarity": "Champion",
+  "type": "Magique"
+ },
+ {
+  "artist": "David Benzal",
+  "description": "\"Les astragues sont des incarnations de la pureté et de la vie considérant les autres races comme impures. Les soldats de la Grand Inquisition de Maden manient des fléaux dévastateurs pour purifier les âmes de leurs ennemis.\"",
+  "extension": "Maden",
+  "image": "Flau des Impurs.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Fl%C3%A9au_des_Impurs",
+  "name": "Fléau des Impurs",
+  "number": "03\/70",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "description": "\"Les grönds manient la hache depuis le berceau et savent comment outrepasser les défenses de leurs adversaires pour infliger de lourds dégâts\"",
+  "extension": "Maden",
+  "image": "Briser le Bouclier.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Briser_le_Bouclier",
+  "name": "Briser le Bouclier",
+  "number": "04\/70",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "David Benzal",
+  "extension": "Maden",
+  "image": "Fracasser.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Fracasser",
+  "name": "Fracasser",
+  "number": "05\/70",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Cassandra El Mhaia",
+  "description": "\"Les astragues sont des êtres possédant une affinité toute particulière avec l'eau et la vie en général. Ils sont capables d'absorber la vie d'un corps et s'en servent dès qu'ils le peuvent.\"",
+  "extension": "Maden",
+  "image": "Absorption de la Vie.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Absorption_de_la_Vie",
+  "name": "Absorption de la Vie",
+  "number": "06\/70",
+  "rarity": "Cammune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "description": "\"Les gobelins utilisent souvent des lames rouillées ou infectées. Bien que la coupure puisse sembler sans conséquences, une gangrène attaque très souvent le membre touché handicapant fortement la victime.\"",
+  "extension": "Maden",
+  "image": "Blessure Incapacitante.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Blessure_Incapacitante",
+  "name": "Blessure Incapacitante",
+  "number": "07\/10",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Maden",
+  "image": "Prendre  la Gorge.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Prendre_%C3%A0_la_Gorge",
+  "name": "Prendre à la Gorge",
+  "number": "08\/70",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "description": "\"Le lohridium est un matériau extrêmement rare et résistant. Porter une armure complète et lohridium est gage d'une grande puissance. Maintenant vus avec une idée de ce qui vous fonce dessus.\"",
+  "extension": "Maden",
+  "image": "Charge Acre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Charge_Ac%C3%A9r%C3%A9e",
+  "name": "Charge Acérée",
+  "number": "09\/70",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Kifboumplutar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Kif%C3%A9boumplutar",
+  "name": "Kiféboumplutar",
+  "number": "10\/70",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Alexandre Douanier",
+  "description": "\"Les astragues sont des guerriers accomplis. Ils manient aussi bien la lame que l'arbalète. Ces dernières possèdent un dispositif complexe de tir permettant de décocher plusieurs carreaux en quelques secondes.\"",
+  "extension": "Maden",
+  "image": "Tir Instinctif.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Tir_Instinctif",
+  "name": "Tir Instinctif",
+  "number": "11\/70",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Inquisition de Maden.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Inquisition_de_Maden",
+  "name": "Inquisition de Maden",
+  "number": "12\/70",
+  "rarity": "Légendaire",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "David Benzal",
+  "description": "\"La grönde arrêta la flèche de son ennemi qui se ficha dans son bouclier. L'impact fut puissant et la pointe imprégnée de poison passa juste au dessus de son poignet. Elle se préparait déjà à encaisser la suivante en attendant le bon moment pour contre-attaquer...\"",
+  "extension": "Maden",
+  "image": "Leve de Bouclier.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lev%C3%A9e_de_Bouclier",
+  "name": "Levée de Bouclier",
+  "number": "13\/70",
+  "rarity": "Commune",
+  "type": "Défense physique"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Maden",
+  "image": "Parade.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Parade",
+  "name": "Parade",
+  "number": "14\/70",
+  "rarity": "Commune",
+  "type": "Défense physique"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Maden",
+  "image": "Contre-Attaque.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Contre-Attaque",
+  "name": "Contre-Attaque",
+  "number": "15\/70",
+  "rarity": "Rare",
+  "type": "Contre-Attaque physique"
+ },
+ {
+  "artist": "Jean-Baptise Andrier",
+  "extension": "Maden",
+  "image": "Drap Aqueux.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Drap%C3%A9_Aqueux",
+  "name": "Drapé Aqueux",
+  "number": "16\/70",
+  "rarity": "Rare",
+  "type": "Défense physique"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Maden",
+  "image": "Peau de Fer.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Peau_de_Fer",
+  "name": "Peau de Fer",
+  "number": "17\/70",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Interruption.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Interruption",
+  "name": "Interruption",
+  "number": "18\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Rage Meutrire.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Rage_Meutri%C3%A8re",
+  "name": "Rage Meutrière",
+  "number": "19\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "description": "\"Les astragues sont des golem d'eau. Il n'est donc pas rare de les voir communier avec la mer ou l'océan. Ils savent canaliser l'énergie de l'eau pour retrouver leurs forces après la bataille.\"",
+  "extension": "Maden",
+  "image": "Au Cur des Flots.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Au_C%C5%93ur_des_Flots",
+  "name": "Au Cœur des Flots",
+  "number": "20\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Sigille dAz.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Sigille_d%27Az",
+  "name": "Sigille d'Az",
+  "number": "21\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Mditation.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/M%C3%A9diation",
+  "name": "Méditation",
+  "number": "22\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "description": "\"Les iffrits sont des être puissants mais néanmoins fragile au corps à corps. Ils ont sur développer de nombreux sortilèges pour infliger des blessures dévastatrices à leurs adversaires.\"",
+  "extension": "Maden",
+  "image": "Griffe de Braise.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Griffe_de_Braise",
+  "name": "Griffe de Braise",
+  "number": "23\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "description": "\"Les iffrits évitent le plus possible le corps à corps. Il arrive cependant que, parfois, quand la situation l'exige, ils s'y retrouvent contraint. Ils doivent alors frapper vite et fort pour ne laisser aucune chance à votre adversaire de réagir.\"",
+  "extension": "Maden",
+  "image": "Fondre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Fondre",
+  "name": "Fondre",
+  "number": "24\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Maden",
+  "image": "Enraciner.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Enraciner",
+  "name": "Enraciner",
+  "number": "25\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Alexandre Douanier",
+  "extension": "Maden",
+  "image": "Enraciner AA.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Enraciner_AA",
+  "name": "Enraciner AA",
+  "number": "25-1\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Maden",
+  "image": "Charge Foudroyante.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Charge_Foudroyante",
+  "name": "Charge Foudroyante",
+  "number": "26\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Vengeance Ancestrale.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Vengeance_Ancestrale",
+  "name": "Vengeance Ancestrale",
+  "number": "27\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Vaporisation.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Vaporisation",
+  "name": "Vaporisation",
+  "number": "28\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Frappe Temporelle.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_Temporelle",
+  "name": "Frappe Temporelle",
+  "number": "29\/70",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Maden",
+  "image": "Onde de Flammes.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Onde_de_Flammes",
+  "name": "Onde de Flammes",
+  "number": "30\/70",
+  "rarity": "Rare",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Maden",
+  "image": "Embraser.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Embraser",
+  "name": "Embraser",
+  "number": "31\/70",
+  "rarity": "Rare",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Romain Leguay",
+  "description": "\"Certains champions ont, petit à petit, été corrompus par les arènes et le pouvoir divin de Narkalor. Ces champions maudits ont développé des techniques impies emplies d'un pouvoir inhérent aux arènes: le Pourpre. Il existe peu de mots pour décrire un iffrit maudit.\"",
+  "extension": "Maden",
+  "image": "Ombre Impie.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ombre_Impie",
+  "name": "Ombre Impie",
+  "number": "32\/70",
+  "rarity": "Légendaire",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Rempart dcorces.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Rempart_d%27%C3%89corces",
+  "name": "Rempart d'Écorces",
+  "number": "33\/70",
+  "rarity": "Commune",
+  "type": "Défense Magique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Projection Astrale.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Projection_Astrale",
+  "name": "Projection Astrale",
+  "number": "34\/70",
+  "rarity": "Commune",
+  "type": "Défense magique"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Mur de Flammes.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Mur_de_Flammes",
+  "name": "Mur de Flammes",
+  "number": "35\/70",
+  "rarity": "Rare",
+  "type": "Défense Magique"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Maden",
+  "image": "Enveloppe Impie.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Enveloppe_Impie",
+  "name": "Enveloppe Impie",
+  "number": "36\/70",
+  "rarity": "Rare",
+  "type": "Défense magique"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Envol.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Envol",
+  "name": "Envol",
+  "number": "37\/70",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Maden",
+  "image": "Aura de Soin.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Aura_de_Soin",
+  "name": "Aura de Soin",
+  "number": "38\/70",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Lapinisation.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lapinisation",
+  "name": "Lapinisation",
+  "number": "39\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "description": "\"Le créateur des iffrits, le Malkyr Aguirel, vit dans la Grande Nébuleuse composée de millions de rochers imprégnées d'énergie. Les iffrits ont donc souvent recours aux roches qu'ils investissent de leur puissance. Ces pierres deviennent alors de véritables foyers d'énergie où l'iffrit peut se reposer et se 'recharger'.\"",
+  "extension": "Maden",
+  "image": "Pierre de Mage.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Pierre_de_Mage",
+  "name": "Pierre de Mage",
+  "number": "40\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "[Smiling Butterfly]]",
+  "extension": "Maden",
+  "image": "Sigille de Kel.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Sigille_de_Kel",
+  "name": "Sigille de Kel",
+  "number": "41\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Potion de Sourcier.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Potion_de_Sourcier",
+  "name": "Potion de Sourcier",
+  "number": "42\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Frappe Imprgne.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_Impr%C3%A9gn%C3%A9e",
+  "name": "Frappe Imprégnée",
+  "number": "43\/70",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Absolution.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Absolution",
+  "name": "Absolution",
+  "number": "44\/70",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "description": "\"Brënn corrompt les champions ayant passé trop de temps dans les arènes. Les naïadins ne sont pas épargnées et leur nature sauvage ne les rend que plus mortels.\"",
+  "extension": "Maden",
+  "image": "Lacrations Impies.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lac%C3%A9rations_Impies",
+  "name": "Lacérations Impies",
+  "number": "45\/70",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "David Benzal",
+  "description": "\"Le kin gaelnath décocha un trait puis un autre. Extrayant à chaque fois un peu de sa verzim pour en imprégner ses flèches. La grönde les arrêtait une par une mais le naïadin savait qu'il ne suffisait que d'une touche pour que le combat prenne fin...\"",
+  "extension": "Maden",
+  "image": "Trait de Verzim.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Trait_de_Verzim",
+  "name": "Trait de Verzim",
+  "number": "46\/70",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Maden",
+  "image": "Liens de Foi.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Liens_de_Foi",
+  "name": "Liens de Foi",
+  "number": "47\/70",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Alexandre Douanier",
+  "extension": "Maden",
+  "image": "Charge Toxique.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Charge_Toxique",
+  "name": "Charge Toxique",
+  "number": "48\/70",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Maden",
+  "image": "Prcepte de Melean.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Pr%C3%A9cepte_de_Melean",
+  "name": "Précepte de Melean",
+  "number": "49\/70",
+  "rarity": "Rare",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Maden",
+  "image": "Jugement.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Jugement",
+  "name": "Jugement",
+  "number": "50\/70",
+  "rarity": "Rare",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Maden",
+  "image": "Tir Bni.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Tir_B%C3%A9ni",
+  "name": "Tir Béni",
+  "number": "51\/70",
+  "rarity": "Rare",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "description": "\"Les jumeaux légendaires du kin gaelnath Össe ont été amenés sur les côtes de Brënn par Narkalor. Ces deux wyrms destructeurs parcourent désormais Avolys dans l'attente de mettre leur puissance au profit d'un naïadin audacieux.\"",
+  "extension": "Maden",
+  "image": "Chtiment ddrel et Cirln.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ch%C3%A2timent_d%27%C3%96drel_et_Cirl%C3%B6n",
+  "name": "Châtiment d'Ödrel et Cirlön",
+  "number": "52\/70",
+  "rarity": "Légendaire",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "description": "\"Même quand les anges paraissent au plus bas, ils maîtrisent un large panel de sorts réparateurs pour redresser leurs protections et restaurer leurs armures.\"",
+  "extension": "Maden",
+  "image": "gide Intangible.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89gide_Intangible",
+  "name": "Égide Intangible",
+  "number": "53\/70",
+  "rarity": "Commune",
+  "type": "Défense hybride"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Maden",
+  "image": "cran de Verzim.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89cran_de_Verzim",
+  "name": "Écran de Verzim",
+  "number": "54\/70",
+  "rarity": "Commune",
+  "type": "Défense hybride"
+ },
+ {
+  "artist": "David Benzal",
+  "extension": "Maden",
+  "image": "Onyx Imprgn.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Onyx_Impr%C3%A9gn%C3%A9",
+  "name": "Onyx Imprégné",
+  "number": "55\/70",
+  "rarity": "Rare",
+  "type": "Défense hybride"
+ },
+ {
+  "artist": "Alexandre Douanier",
+  "extension": "Maden",
+  "image": "Grce Rdemptrice.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Gr%C3%A2ce_R%C3%A9demptrice",
+  "name": "Grâce Rédemptrice",
+  "number": "56\/70",
+  "rarity": "Rare",
+  "type": "Défense hybride"
+ },
+ {
+  "artist": "Quentin Castel",
+  "extension": "Maden",
+  "image": "Retraite Sacre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Retraite_Sacr%C3%A9e",
+  "name": "Retraite Sacrée",
+  "number": "57\/70",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Maden",
+  "image": "Absorber le Poison.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Absorber_le_Poison",
+  "name": "Absorber le Poison",
+  "number": "58\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Maden",
+  "image": "Repos Cleste.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Repos_C%C3%A9leste",
+  "name": "Repos Céleste",
+  "number": "59\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Maden",
+  "image": "Envoteuse de MajNar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Envo%C3%BBteuse_de_Maj%27Nar",
+  "name": "Envoûteuse de Maj'Nar",
+  "number": "60\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Sigille dAna.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Sigille_d%27Ana",
+  "name": "Sigille d'Ana",
+  "number": "61\/70",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Maden",
+  "image": "Communion Cleste.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Communion_C%C3%A9leste",
+  "name": "Communion Céleste",
+  "number": "62\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Sentence de Narun-Tal.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Sentence_de_Narun-Tal",
+  "name": "Sentence de Narun-Tal",
+  "number": "63\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Maden",
+  "image": "Corruption du Pourpre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Corruption_du_Pourpre",
+  "name": "Corruption du Pourpre",
+  "number": "64\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Maden",
+  "image": "Quitude phmre.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Qui%C3%A9tude_%C3%89ph%C3%A9m%C3%A8re",
+  "name": "Quiétude Éphémère",
+  "number": "65\/70",
+  "rarity": "Commune",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Maden",
+  "image": "Connaissance des Arnes.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Connaissance_des_Ar%C3%A8nes",
+  "name": "Connaissance des Arènes",
+  "number": "66\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Maden",
+  "image": "Duel de Volont.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Duel_de_Volont%C3%A9",
+  "name": "Duel de Volonté",
+  "number": "67\/70",
+  "rarity": "Rare",
+  "type": "Annulation"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Maden",
+  "image": "Poudre dHeneld.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Poudre_d%27Heneld",
+  "name": "Poudre d'Heneld",
+  "number": "68\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Rveil de Theosne.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/R%C3%A9veil_de_Theosne",
+  "name": "Réveil de Theosne",
+  "number": "69\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Smiling Butterfly",
+  "extension": "Maden",
+  "image": "Fracture Temporelle.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Fracture_Temporelle",
+  "name": "Fracture Temporelle",
+  "number": "70\/70",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ }
+]

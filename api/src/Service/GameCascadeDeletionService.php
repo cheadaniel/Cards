@@ -38,7 +38,7 @@ class GameCascadeDeletionService
 
         foreach ($extensions as $extension) {
             // Supprimez les cartes liées à cette extension
-            // $this->deleteCardsForExtension($extension);
+            $this->deleteCardsForExtension($extension);
 
             // Supprimez l'extension
             $this->entityManager->remove($extension);
@@ -49,11 +49,12 @@ class GameCascadeDeletionService
 
     public function deleteCardsForExtension(Extension $extension)
     {
-        $cards = $extension->getCards();
+        $cards = $extension->getExtensionCardId();
 
         foreach ($cards as $card) {
             $this->entityManager->remove($card);
         }
+        $this->entityManager->flush();
     }
 
     public function deleteDecks(Game $game)

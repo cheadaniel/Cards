@@ -1,0 +1,542 @@
+[
+ {
+  "artist": "Smilling Butterfly",
+  "extension": "Raids sur Oligar",
+  "image": "Yvlin.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Y%C3%ABv%C3%ABlin",
+  "name": "Yëvëlin",
+  "number": "01\/54",
+  "rarity": "Champion",
+  "type": "Force"
+ },
+ {
+  "artist": "Smilling Butterfly",
+  "extension": "Raids sur Oligar",
+  "image": "Aod.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Aod",
+  "name": "Aod",
+  "number": "02\/54",
+  "rarity": "Champion",
+  "type": "Hybride"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Raids sur Oligar",
+  "image": "Tir Hroque.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Tir_H%C3%A9ro%C3%AFque",
+  "name": "Tir Héroïque",
+  "number": "03\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Thomas Rome",
+  "extension": "Raids sur Oligar",
+  "image": "Trait Inspir.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Trait_Inspir%C3%A9",
+  "name": "Trait Inspiré",
+  "number": "04\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Raids sur Oligar",
+  "image": "Tir  la Tte.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Tir_%C3%A0_la_T%C3%AAte",
+  "name": "Tir à la Tête",
+  "number": "05\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Raids sur Oligar",
+  "image": "Attaque en Pique.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Attaque_en_Piqu%C3%A9e",
+  "name": "Attaque en Piquée",
+  "number": "06\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Raids sur Oligar",
+  "image": "Riposte.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Riposte",
+  "name": "Riposte",
+  "number": "07\/54",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Raids sur Oligar",
+  "image": "En Plein Cur.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/En_Plein_C%C5%93ur",
+  "name": "En Plein Cœur",
+  "number": "08\/54",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Inkognit",
+  "extension": "Raids sur Oligar",
+  "image": "Flche du Clan Dlm.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Fl%C3%A8che_du_Clan_D%C3%ABl%C3%B6m",
+  "name": "Flèche du Clan Dëlöm",
+  "number": "09\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Jordy Wedding",
+  "extension": "Raids sur Oligar",
+  "image": "Blocage Audacieux.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Blocage_Audacieux",
+  "name": "Blocage Audacieux",
+  "number": "10\/54",
+  "rarity": "Commune",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Raids sur Oligar",
+  "image": "Parade Renomme.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Parade_Renomm%C3%A9e",
+  "name": "Parade Renommée",
+  "number": "11\/54",
+  "rarity": "Rare",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Confins.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Confins",
+  "name": "Raid : Confins",
+  "number": "12\/54",
+  "rarity": "Commune",
+  "type": "Raid"
+ },
+ {
+  "artist": "Gaël Giudicelli",
+  "extension": "Raids sur Oligar",
+  "image": "Bravoure.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Bravoure",
+  "name": "Bravoure",
+  "number": "13\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Lanevil.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Lanevil",
+  "name": "Raid : Lanevil",
+  "number": "14\/54",
+  "rarity": "Rare",
+  "type": "Raid"
+ },
+ {
+  "artist": "Guillaume Ducos",
+  "extension": "Raids sur Oligar",
+  "image": "Esprit du Clan Dlm.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Esprit_du_Clan_D%C3%ABl%C3%B6m",
+  "name": "Esprit du Clan Dëlöm",
+  "number": "16\/54",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Halder Almeida",
+  "extension": "Raids sur Oligar",
+  "image": "Coup Hroque.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Coup_H%C3%A9ro%C3%AFque",
+  "name": "Coup Héroïque",
+  "number": "16\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Xavier Leroux",
+  "extension": "Raids sur Oligar",
+  "image": "Grappin Empoisonn.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Grappin_Empoisonn%C3%A9",
+  "name": "Grappin Empoisonné",
+  "number": "17\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Camille Alquier",
+  "extension": "Raids sur Oligar",
+  "image": "Frappe Dcisive.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_D%C3%A9cisive",
+  "name": "Frappe Décisive",
+  "number": "18\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Quentin Castel",
+  "extension": "Raids sur Oligar",
+  "image": "Poigne des Dresseurs.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Poigne_des_Dresseurs",
+  "name": "Poigne des Dresseurs",
+  "number": "19\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Raids sur Oligar",
+  "image": "Constriction.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Constriction",
+  "name": "Constriction",
+  "number": "20\/54",
+  "rarity": "Rare",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Quentin de Warren",
+  "extension": "Raids sur Oligar",
+  "image": "Harponner.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Harponner",
+  "name": "Harponner",
+  "number": "21\/54",
+  "rarity": "Rare",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Guillaume Ducos",
+  "extension": "Raids sur Oligar",
+  "image": "Rue Sauvage.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ru%C3%A9e_Sauvage",
+  "name": "Ruée Sauvage",
+  "number": "22\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Raids sur Oligar",
+  "image": "Parade Audacieuse.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Parade_Audacieuse",
+  "name": "Parade Audacieuse",
+  "number": "23\/54",
+  "rarity": "Commune",
+  "type": "Protection hybride"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Raids sur Oligar",
+  "image": "Barrage dcailles.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Barrage_d%27%C3%89cailles",
+  "name": "Barrage d'Écailles",
+  "number": "24\/54",
+  "rarity": "Rare",
+  "type": "Protection hybride"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Tar Oxal.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Tar_Oxal",
+  "name": "Raid : Tar Oxal",
+  "number": "25\/54",
+  "rarity": "Commune",
+  "type": "Raid"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Ereth Onil.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Ereth_Onil",
+  "name": "Raid : Ereth Onil",
+  "number": "26\/54",
+  "rarity": "Rare",
+  "type": "Raid"
+ },
+ {
+  "artist": "David Benzal",
+  "extension": "Raids sur Oligar",
+  "image": "Corruption.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Corruption",
+  "name": "Corruption",
+  "number": "27\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Inkognit",
+  "extension": "Raids sur Oligar",
+  "image": "cho dAbyss.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89cho_d%27Abyss",
+  "name": "Écho d'Abyss",
+  "number": "28\/54",
+  "rarity": "Légendaire",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Gaël Giudicelli",
+  "extension": "Raids sur Oligar",
+  "image": "Coup Circulaire.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Coup_Circulaire",
+  "name": "Coup Circulaire",
+  "number": "29\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique - résistance"
+ },
+ {
+  "artist": "Jean-Baptiste Andrier",
+  "extension": "Raids sur Oligar",
+  "image": "Feinte.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Feinte",
+  "name": "Feinte",
+  "number": "30\/54",
+  "rarity": "Rare",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Tumulus de Njern.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Tumulus_de_Njern",
+  "name": "Raid : Tumulus de Njern",
+  "number": "31\/54",
+  "rarity": "Légendaire",
+  "type": "Raid"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Raids sur Oligar",
+  "image": "Ondes Dfensives.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ondes_D%C3%A9fensives",
+  "name": "Ondes Défensives",
+  "number": "32\/54",
+  "rarity": "Commune",
+  "type": "Protection magique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Raids sur Oligar",
+  "image": "Un Pas dans le Temps.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Un_Pas_dans_le_Temps",
+  "name": "Un Pas dans le Temps",
+  "number": "33\/54",
+  "rarity": "Rare",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Tour dOligar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Tour_d%27Oligar",
+  "name": "Raid : Tour d'Oligar",
+  "number": "34\/54",
+  "rarity": "Légendaire",
+  "type": "Raid"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Raids sur Oligar",
+  "image": "Kidrain.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Kidrain",
+  "name": "Kidrain",
+  "number": "35\/54",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Raids sur Oligar",
+  "image": "Kontagion.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Kontagion",
+  "name": "Kontagion",
+  "number": "36\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Quentin Castel",
+  "extension": "Raids sur Oligar",
+  "image": "Infection de Verzim.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Infection_de_Verzim",
+  "name": "Infection de Verzim",
+  "number": "37\/54",
+  "rarity": "Rare",
+  "type": "Protection hybride"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Raids sur Oligar",
+  "image": "Leon de Tar Minariel.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Le%C3%A7on_de_Tar_Minariel",
+  "name": "Leçon de Tar Minariel",
+  "number": "38\/54",
+  "rarity": "Légendaire",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Raids sur Oligar",
+  "image": "Entrave.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Entrave",
+  "name": "Entrave",
+  "number": "39\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "David Benzal",
+  "extension": "Raids sur Oligar",
+  "image": "Appel des Monts.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Appel_des_Monts",
+  "name": "Appel des Monts",
+  "number": "40\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Quentin de Warren",
+  "extension": "Raids sur Oligar",
+  "image": "Rage.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Rage",
+  "name": "Rage",
+  "number": "41\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Thomas Rome",
+  "extension": "Raids sur Oligar",
+  "image": "Rue Dfensive.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ru%C3%A9e_D%C3%A9fensive",
+  "name": "Ruée Défensive",
+  "number": "42\/54",
+  "rarity": "Commune",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Romain Leguay",
+  "extension": "Raids sur Oligar",
+  "image": "Feu et me.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Feu_et_%C3%82me",
+  "name": "Feu et Âme",
+  "number": "43\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Lukas Siegmon",
+  "extension": "Raids sur Oligar",
+  "image": "Combustion Triomphante.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Combustion_Triomphante",
+  "name": "Combustion Triomphante",
+  "number": "44\/54",
+  "rarity": "Commune",
+  "type": "Protection magique"
+ },
+ {
+  "artist": "Nassima Amir",
+  "extension": "Raids sur Oligar",
+  "image": "Chtiment.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Ch%C3%A2timent",
+  "name": "Châtiment",
+  "number": "45\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Goodname Studio",
+  "extension": "Raids sur Oligar",
+  "image": "Raid  Zar-Gald.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Raid_:_Zar-Gald",
+  "name": "Raid : Zar-Gald",
+  "number": "46\/54",
+  "rarity": "Légendaire",
+  "type": "Raid"
+ },
+ {
+  "artist": "Martin Mottet",
+  "extension": "Raids sur Oligar",
+  "image": "Puret Infaillible.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Puret%C3%A9_Infaillible",
+  "name": "Pureté Infaillible",
+  "number": "47\/54",
+  "rarity": "Rare",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Raids sur Oligar",
+  "image": "Frappe Vitale.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Frappe_Vitale",
+  "name": "Frappe Vitale",
+  "number": "48\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ },
+ {
+  "artist": "Igor Klymenko",
+  "extension": "Raids sur Oligar",
+  "image": "Contamination Vitale.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Contamination_Vitale",
+  "name": "Contamination Vitale",
+  "number": "49\/54",
+  "rarity": "Commune",
+  "type": "Protection physique"
+ },
+ {
+  "artist": "Xavier Ribeiro",
+  "extension": "Raids sur Oligar",
+  "image": "tincelles.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/%C3%89tincelles",
+  "name": "Étincelles",
+  "number": "50\/54",
+  "rarity": "Commune",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Igor Klymenko",
+  "extension": "Raids sur Oligar",
+  "image": "Haine Ancestrale.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Haine_Ancestrale",
+  "name": "Haine Ancestrale",
+  "number": "51\/54",
+  "rarity": "Rare",
+  "type": "Attaque magique"
+ },
+ {
+  "artist": "Guillaume Ducos",
+  "extension": "Raids sur Oligar",
+  "image": "Absorber les Flammes.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Absorber_les_Flammes",
+  "name": "Absorber les Flammes",
+  "number": "52\/54",
+  "rarity": "Rare",
+  "type": "Amélioration"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Raids sur Oligar",
+  "image": "Heurt.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Heurt",
+  "name": "Heurt",
+  "number": "53\/54",
+  "rarity": "Commune",
+  "type": "Attaque hybride"
+ },
+ {
+  "artist": "Helder Almeida",
+  "extension": "Raids sur Oligar",
+  "image": "Lutte Raids sur Oligar.jpg",
+  "link": "https:\/\/malkyrs.fandom.com\/fr\/wiki\/Lutte_(Raids_sur_Oligar)",
+  "name": "Lutte (Raids sur Oligar)",
+  "number": "54\/54",
+  "rarity": "Commune",
+  "type": "Attaque physique"
+ }
+]
