@@ -15,11 +15,20 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CardController extends AbstractController
 {
-    #[Route('/card', name: 'app_card')]
-    public function index(): Response
+    #[Route('games/{gameName}/{extensionName}/{cardName}', name: 'card')]
+    public function index($gameName, $extensionName, $cardName, CardRepository $cardRepository): Response
     {
+        $card = $cardRepository->findByCardName($cardName);
+
+        // Récupérez tous les commentaires associés à la carte
+        $comments = $card->getCardCommentaryId();
+        //dd($comments);
+
         return $this->render('card/index.html.twig', [
-            'controller_name' => 'CardController',
+            'gameName' => $gameName,
+            'extensionName' => $extensionName,
+            'card' => $card,
+            'comments'=> $comments,
         ]);
     }
 

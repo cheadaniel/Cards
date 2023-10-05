@@ -19,9 +19,11 @@
 					<p class="card-name">{{ card.name }}</p>
 					<img src="{{ card.image }}" alt="{{ card.name }}" class="card_img">
 				</div>
-				<div>
+				<div class="card-action">
 					<button>-</button>
-					<button>{# <a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link"> </a> #}</button>
+					<button>
+						<a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link">Voir la carte</a>
+					</button>
 					<button>+</button>
 				</div>
 			</div>
