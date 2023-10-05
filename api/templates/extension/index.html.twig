@@ -30,9 +30,9 @@
 				<a href="{{ path('delete_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="delete-card">
 					Supprimer
 				</a>
-				{# <a href="{{ path('edit_card', {'gameName': gameName, 'extensionName':extension.name,'cardName' : card.name}) }}" class="edit-card">
-																		Modifier
-																	</a> #}
+				<a href="{{ path('edit_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="edit-card">
+					Modifier
+				</a>
 			</div>
 		{% endfor %}
 	</div>

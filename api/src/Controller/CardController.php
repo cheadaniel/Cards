@@ -63,4 +63,19 @@ class CardController extends AbstractController
         $cardRepository->remove($card, true);
         return $this->redirectToRoute('extension', ['gameName' => $gameName, 'extensionName' => $extensionName]);
     }
+
+    #[Route('admin/games/{gameName}/{extensionName}/{cardName}/edit', name: 'edit_card', methods: ['GET', 'POST'])]
+    public function edit_card(Request $request, EntityManagerInterface $entityManager, CardRepository $cardRepository, $gameName, $extensionName, $cardName): Response
+    {
+        $post = $cardRepository->findByCardName($cardName);
+        $form = $this->createForm(CardFormType::class, $post);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+            return $this->redirectToRoute('extension', ['gameName' => $gameName, 'extensionName' => $extensionName]);
+        }
+        return $this->render('extension/editExtension.html.twig', [
+            'extensionForm' => $form->createView(),
+        ]);
+    }
 }
