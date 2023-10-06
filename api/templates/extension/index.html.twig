@@ -17,7 +17,8 @@
 			<div class="card-cart">
 				<div>
 					<p class="card-name">{{ card.name }}</p>
-					<img src="{{ card.image }}" alt="{{ card.name }}" class="card_img">
+					<img src="{{ asset('media/images/Malkyrs/' ~ extensionName ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
+
 				</div>
 				<div class="card-action">
 					<button>-</button>

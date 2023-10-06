@@ -18,7 +18,7 @@ class ExtensionFixtures extends Fixture implements DependentFixtureInterface
         // Créez des données pour les extensions
         $extensionsData = [
             [
-                'name' => 'Set de base',
+                'name' => 'AoE',
                 'releaseDate' => new \DateTimeImmutable('2016-12-01'),
                 'image' => 'image1.jpg',
             ],
@@ -28,12 +28,12 @@ class ExtensionFixtures extends Fixture implements DependentFixtureInterface
                 'image' => 'image2.jpg',
             ],
             [
-                'name' => 'Raids sur Oligar',
+                'name' => 'Raids-sur-Oligar',
                 'releaseDate' => new \DateTimeImmutable('2018-05-25'),
                 'image' => 'image3.jpg',
             ],
             [
-                'name' => 'Tumulte sur Oligar',
+                'name' => 'Tumulte-sur-Oligar',
                 'releaseDate' => new \DateTimeImmutable('2018-11-09'),
                 'image' => 'image4.jpg',
             ],
@@ -47,8 +47,8 @@ class ExtensionFixtures extends Fixture implements DependentFixtureInterface
                 ->setGameId($game);
 
             $manager->persist($extension);
-            // Ajoutez une référence à l'extension
-            $extensionReferenceName = strtolower(str_replace(' ', '_', $extensionData['name'])) . '_extension';
+            // Ajoutez une référence à l'extension en utilisant un nom formaté
+            $extensionReferenceName = strtolower(str_replace(' ', '_', $extensionData['name'])) . '-collection-' . $extensionData['releaseDate']->format('Y-m-d');
             $this->addReference($extensionReferenceName, $extension);
         }
 
