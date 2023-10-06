@@ -71,5 +71,27 @@ export function editMessage(idMessage, newContent) {
         }
     })
         .then(response => response.json());
+}
 
+export function createCommentary(url, form, commentForm) {
+    const content = commentForm.value;
+    fetch(url + '/commentary/create', {
+        method: 'POST',
+        body: JSON.stringify({ content }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Réinitialiser le formulaire ou effectuer d'autres actions en fonction de la réponse
+            if (data.success) {
+                // Réinitialiser le formulaire
+                window.location.reload();
+                form.reset();
+            }
+        })
+        .catch(error => {
+            console.error('Erreur réseau', error);
+        });
 }
