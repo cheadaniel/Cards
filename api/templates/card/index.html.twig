@@ -46,27 +46,39 @@
 
 		<div class="carte-commentaire">
 			<h4>Commentaires</h4>
-			<div>
+			<div class="comments">
 				{% for comment in comments %}
-					<div>
+					<div class="commentaire" data-id="{{ comment.id }}">
 						<div>
-							<p>Par :
-								{{comment.getUserId.name}}</p>
-							<p>Créé le :
-								{{ comment.createdAt | date('Y-m-d H:i:s') }}</p>
+							<div>
+								<p>Par :
+									{{comment.getUserId.name}}</p>
+								<p>Créé le :
+									{{ comment.createdAt | date('Y-m-d H:i:s') }}</p>
+							</div>
+							<p>{{ comment.content }}</p>
 						</div>
-						<p>{{ comment.content }}</p>
+						{% if app.user or is_granted('ROLE_ADMIN') %}
+							<div>
+								<button>
+									<a href="{{ path('delete_commentary', {'userId': app.user.id,'commentary_id':comment.id}) }}" class="delete-commentary" data-id="{{ comment.id }}">
+										Supprimer
+									</a>
+								</button>
+							</div>
+						{% endif %}
 					</div>
+
 				{% endfor %}
 			</div>
 			<div class="new-comment">
 				<form class="commentForm">
-					<label for="commentContent">Contenu du commentaire :
-					</label>
+					<label for="commentContent">Contenu du commentaire :</label>
 					<input type="text" name="commentContent" id="commentContent" rows="4" cols="50" required>
 					<button type="submit">Envoyer</button>
 				</form>
 			</div>
+
 		</div>
 	</div>
 {% endblock %}

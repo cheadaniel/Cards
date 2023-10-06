@@ -14,9 +14,6 @@
 							<textarea class="edit-content" name="edit-content">{{ message.content }}</textarea>
 							<button class="save-edit" data-id="{{ message.id }}">Enregistrer</button>
 						</form>
-					{% endif %}
-
-					{% if message.getUserSenderId() == user_sender %}
 						<button>
 							<a href="{{ path('delete_message', {'user_id_sender': app.user.id,'message_id':message.id}) }}" class="delete-message" data-id="{{ message.id }}">
 								Supprimer

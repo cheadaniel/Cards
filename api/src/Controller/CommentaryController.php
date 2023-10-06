@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Commentary;
 use App\Repository\CardRepository;
+use App\Repository\CommentaryRepository;
 use DateTimeImmutable;
 use DateTimeZone;
 use Doctrine\ORM\EntityManagerInterface;
@@ -32,7 +33,7 @@ class CommentaryController extends AbstractController
     }
 
     #[Route('games/{gameName}/{extensionName}/{cardName}/commentary/create', name: 'create_commentary')]
-    public function create_commentary(Request $request, $gameName, $extensionName,$cardName, EntityManagerInterface $entityManager, CardRepository $cardRepository): JsonResponse
+    public function create_commentary(Request $request, $gameName, $extensionName, $cardName, EntityManagerInterface $entityManager, CardRepository $cardRepository): JsonResponse
     {
 
         // Récupérez l'utilisateur actuellement connecté 
@@ -68,5 +69,13 @@ class CommentaryController extends AbstractController
             'message' => 'ok',
         ];
         return $this->json($response);
+    }
+
+    #[Route('/commentary/{userId}/{commentary_id}/delete', name: 'delete_commentary',  methods: ['GET'])]
+    public function delete_commentary(CommentaryRepository $commentaryRepository, $userId, $commentary_id): Response
+    {
+        $commentary = $commentaryRepository->find($commentary_id);
+        $commentaryRepository->remove($commentary, true);
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }
