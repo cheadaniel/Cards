@@ -78,4 +78,25 @@ class CommentaryController extends AbstractController
         $commentaryRepository->remove($commentary, true);
         return new Response(null, Response::HTTP_NO_CONTENT);
     }
+
+    #[Route('commentary/edit/{commentary_id}', name: 'edit_commentary', methods: ['GET', 'POST'])]
+    public function edit_commentary(Request $request, CommentaryRepository $commentaryRepository, $commentary_id, EntityManagerInterface $entityManager): JsonResponse
+    {
+
+        $data = json_decode($request->getContent(), true);
+        $content = $data['content'];
+
+        $commentary = $commentaryRepository->find($commentary_id);
+        $commentary->setContent($content);
+        $parisTimeZone = new DateTimeZone('Europe/Paris');
+        $createdAt = new DateTimeImmutable('now', $parisTimeZone); // Créer une nouvelle instance de DateTime avec la date et l'heure actuelles
+        $commentary->setCreatedAt($createdAt);
+        $entityManager->flush();
+
+        $response = [
+            'success' => true,
+            'message' => 'ok',
+        ];
+        return $this->json($response);
+    }
 }

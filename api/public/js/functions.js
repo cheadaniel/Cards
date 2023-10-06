@@ -95,3 +95,14 @@ export function createCommentary(url, form, commentForm) {
             console.error('Erreur réseau', error);
         });
 }
+
+export function editCommentary(idCommentary, newContent) {
+    return fetch(`/commentary/edit/${idCommentary}`, {
+        method: 'POST',
+        body: JSON.stringify({ content: newContent }),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(response => response.json());
+}
