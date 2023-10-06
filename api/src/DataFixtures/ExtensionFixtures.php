@@ -20,22 +20,22 @@ class ExtensionFixtures extends Fixture implements DependentFixtureInterface
             [
                 'name' => 'AoE',
                 'releaseDate' => new \DateTimeImmutable('2016-12-01'),
-                'image' => 'image1.jpg',
+                'image' => 'malkyrs-logo.jpg',
             ],
             [
                 'name' => 'Maden',
                 'releaseDate' => new \DateTimeImmutable('2017-11-10'),
-                'image' => 'image2.jpg',
+                'image' => 'malkyrs-logo.jpg',
             ],
             [
                 'name' => 'Raids-sur-Oligar',
                 'releaseDate' => new \DateTimeImmutable('2018-05-25'),
-                'image' => 'image3.jpg',
+                'image' => 'malkyrs-logo.jpg',
             ],
             [
                 'name' => 'Tumulte-sur-Oligar',
                 'releaseDate' => new \DateTimeImmutable('2018-11-09'),
-                'image' => 'image4.jpg',
+                'image' => 'malkyrs-logo.jpg',
             ],
         ];
 

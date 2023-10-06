@@ -21,14 +21,6 @@ class GameFixtures extends Fixture
         $imagePath = 'malkyrs-logo.jpg'; // Chemin vers l'image
         $game->setImage($imagePath);
 
-        // // Assurez-vous que le chemin de l'image est correct
-        // if (file_exists($imagePath)) {
-        //     // Stockez le chemin de l'image
-        // } else {
-        //     // Générez un message d'erreur si le fichier image n'existe pas
-        //     throw new \Exception("L'image n'existe pas : $imagePath");
-        // }
-
         // Enregistrez l'objet Game dans la base de données
         $manager->persist($game);
 
