@@ -21,11 +21,17 @@
 
 				</div>
 				<div class="card-action">
-					<button>-</button>
-					<button>
-						<a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link">Voir la carte</a>
-					</button>
-					<button>+</button>
+
+
+					<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
+						<button>-</button>
+					</a>
+					<a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link">
+						<button>Voir la carte</button>
+					</a>
+					<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
+						<button>+</button>
+					</a>
 				</div>
 			</div>
 

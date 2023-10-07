@@ -39,6 +39,17 @@ class CollectRepository extends ServiceEntityRepository
         }
     }
 
+    public function findCollectionByUserAndGame($userName, $gameName)
+{
+    return $this->createQueryBuilder('c')
+        ->andWhere('c.User_id = :userName')
+        ->andWhere('c.Game_id = :gameName')
+        ->setParameter('userName', $userName)
+        ->setParameter('gameName', $gameName)
+        ->getQuery()
+        ->getOneOrNullResult();
+}
+
 //    /**
 //     * @return Collect[] Returns an array of Collect objects
 //     */

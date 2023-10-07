@@ -39,8 +39,12 @@
 				</tr>
 			</table>
 			<div class="carte-action">
-				<button>-</button>
-				<button>+</button>
+				<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
+					<button>-</button>
+				</a>
+				<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
+					<button>+</button>
+				</a>
 			</div>
 		</div>
 
