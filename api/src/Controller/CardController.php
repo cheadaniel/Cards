@@ -3,10 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Card;
+use App\Entity\CardCollection;
+use App\Entity\Collect;
 use App\Form\CardFormType;
+use App\Repository\CardCollectionRepository;
 use App\Repository\CardRepository;
+use App\Repository\CollectRepository;
 use App\Repository\ExtensionRepository;
 use App\Repository\GameRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,7 +33,7 @@ class CardController extends AbstractController
             'gameName' => $gameName,
             'extensionName' => $extensionName,
             'card' => $card,
-            'comments'=> $comments,
+            'comments' => $comments,
         ]);
     }
 
@@ -61,7 +66,7 @@ class CardController extends AbstractController
         ]);
     }
 
-    #[Route('admin/games/{gameName}/{extensionName}/{cardName}/delete', name: 'delete_card',  methods: ['GET'])]
+    #[Route('games/{gameName}/{extensionName}/{cardName}/delete', name: 'delete_card',  methods: ['GET'])]
     public function delete_card(CardRepository $cardRepository, $gameName, $extensionName, $cardName): Response
     {
         $card = $cardRepository->findByCardName($cardName);
@@ -73,7 +78,7 @@ class CardController extends AbstractController
         return $this->redirectToRoute('extension', ['gameName' => $gameName, 'extensionName' => $extensionName]);
     }
 
-    #[Route('admin/games/{gameName}/{extensionName}/{cardName}/edit', name: 'edit_card', methods: ['GET', 'POST'])]
+    #[Route('games/{gameName}/{extensionName}/{cardName}/edit', name: 'edit_card', methods: ['GET', 'POST'])]
     public function edit_card(Request $request, EntityManagerInterface $entityManager, CardRepository $cardRepository, $gameName, $extensionName, $cardName): Response
     {
         $post = $cardRepository->findByCardName($cardName);
@@ -86,5 +91,87 @@ class CardController extends AbstractController
         return $this->render('extension/editExtension.html.twig', [
             'extensionForm' => $form->createView(),
         ]);
+    }
+
+    #[Route('add/{userId}/{gameName}/{cardId}', name: 'add_card_to_collect')]
+    public function incrementCardInCollection($userId, $gameName, $cardId, UserRepository $userRepository, GameRepository $gameRepository, CollectRepository $collectRepository, CardRepository $cardRepository, CardCollectionRepository $cardCollectionRepository, EntityManagerInterface $entityManager): Response
+    {
+        $user = $userRepository->find($userId);
+        $game = $gameRepository->findByGameName($gameName);
+        $card = $cardRepository->find($cardId);
+
+        if (!$game) {
+            return $this->redirectToRoute('games');
+        }
+
+        $collect = $collectRepository->findCollectionByUserAndGame($user, $game);
+
+        if ($collect) {
+            $cardCollection = $cardCollectionRepository->findOneByCardAndCollect($card, $collect);
+
+            if ($cardCollection) {
+                // Si la CardCollection existe déjà, augmentez la quantité de 1
+                $quantity = $cardCollection->getQuantity() + 1;
+                $cardCollection->setQuantity($quantity);
+
+                $entityManager->persist($cardCollection);
+                $entityManager->flush();
+            } else {
+                // Si la CardCollection n'existe pas, créez-en une nouvelle avec une quantité de 1
+                $cardCollect = new CardCollection();
+                $cardCollect->setCardId($card);
+                $cardCollect->setCollectId($collect);
+                $cardCollect->setQuantity(1);
+
+                $entityManager->persist($cardCollect);
+                $entityManager->flush();
+            }
+        } else {
+            $newCollect = new Collect();
+            $newCollect->setUserId($user);
+            $newCollect->setGameId($game);
+
+            $entityManager->persist($newCollect);
+            $entityManager->flush();
+
+            // Maintenant que le Collect est persisté, vous pouvez l'utiliser
+            $cardCollect = new CardCollection();
+            $cardCollect->setCardId($card);
+            $cardCollect->setCollectId($newCollect); // Utilisez $newCollect ici
+
+            $entityManager->persist($cardCollect);
+            $entityManager->flush();
+        }
+        return new Response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    #[Route('remove/{userId}/{gameName}/{cardId}', name: 'remove_card_to_collect')]
+    public function decrementCardInCollection($userId, $gameName, $cardId, UserRepository $userRepository, GameRepository $gameRepository, CollectRepository $collectRepository, CardRepository $cardRepository, CardCollectionRepository $cardCollectionRepository, EntityManagerInterface $entityManager): Response
+    {
+        $user = $userRepository->find($userId);
+        $game = $gameRepository->findByGameName($gameName);
+        $card = $cardRepository->find($cardId);
+
+        if (!$game) {
+            return $this->redirectToRoute('games');
+        }
+
+        $collect = $collectRepository->findCollectionByUserAndGame($user, $game);
+
+        if ($collect) {
+            $cardCollection = $cardCollectionRepository->findOneByCardAndCollect($card, $collect);
+
+            if ($cardCollection) {
+                // Si la CardCollection existe déjà, diminuez la quantité de 1 jusqu'à un minimum de 0
+                $currentQuantity = $cardCollection->getQuantity();
+                $newQuantity = max($currentQuantity - 1, 0);
+                $cardCollection->setQuantity($newQuantity);
+
+                $entityManager->persist($cardCollection);
+                $entityManager->flush();
+            }
+        }
+
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

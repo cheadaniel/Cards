@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{userName}}
+{% endblock %}
+
+{% block body %}
+
+	<h1>Jeux de {{userName}}</h1>
+
+<div class="extension-container">
+		{% for extension in extensions %}
+			<a href="{{ path('user_collect_cards', {'userName': userName,'gameName': gameName, 'extensionName':extension.name}) }}" class="extension">
+				<div>
+					<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extension.image ) }}" alt="{{ extension.name }}" class="extension_img">
+					<p class="extension-name">{{ extension.name }}</p>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -18,7 +18,7 @@
 		{% for extension in extensions %}
 			<a href="{{ path('extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="extension">
 				<div>
-					<img src="{{ extension.image }}" alt="{{ extension.name }}" class="extension_img">
+					<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extension.image ) }}" alt="{{ extension.name }}" class="extension_img">
 					<p class="extension-name">{{ extension.name }}</p>
 				</div>
 			</a>

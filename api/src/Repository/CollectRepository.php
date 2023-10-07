@@ -39,28 +39,48 @@ class CollectRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Collect[] Returns an array of Collect objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findCollectionByUserAndGame($userName, $gameName)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.User_id = :userName')
+            ->andWhere('c.Game_id = :gameName')
+            ->setParameter('userName', $userName)
+            ->setParameter('gameName', $gameName)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 
-//    public function findOneBySomeField($value): ?Collect
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findCollectionByUser($userName)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.User_id = :userName')
+            ->setParameter('userName', $userName)
+            ->getQuery()
+            ->getResult();
+    }
+
+    //    /**
+    //     * @return Collect[] Returns an array of Collect objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('c')
+    //            ->andWhere('c.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('c.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?Collect
+    //    {
+    //        return $this->createQueryBuilder('c')
+    //            ->andWhere('c.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

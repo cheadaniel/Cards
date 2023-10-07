@@ -11,10 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
-    #[Route('/user/{id}', name: 'my_account')] // Accéder à sa page de profil 
-    public function user_account(UserRepository $userRepository, $id): Response
+    #[Route('/user/{userName}', name: 'my_account')] // Accéder à sa page de profil 
+    public function user_account(UserRepository $userRepository, $userName): Response
     {
-        $user = $userRepository->find($id);
+        $user = $userRepository->findByUserName($userName);
 
         return $this->render('user/my_account.html.twig', [
             'user' => $user,

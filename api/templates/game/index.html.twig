@@ -15,7 +15,7 @@
 		{% for game in games %}
 			<a href="{{ path('game', {'gameName': game.name}) }}" class="game">
 				<div>
-					<img src="{{ game.image }}" alt="{{ game.name }}" class="game_img">
+					<img src=" {{ asset('media/images/' ~ game.name ~ '/'  ~ game.image ) }}" alt="{{ game.name }}" class="game_img">
 					<p class="game-name">{{ game.name }}</p>
 				</div>
 			</a>

@@ -25,11 +25,10 @@ class GameCascadeDeletionService
         $this->deleteExtensions($game);
         // $this->deleteDecks($game);
         // $this->deleteCollections($game);
-        // $this->deleteComments($game);
 
         // Enfin, supprimez le jeu lui-même
         $this->entityManager->remove($game);
-        $this->entityManager->flush();
+        //$this->entityManager->flush();
     }
 
     public function deleteExtensions(Game $game)
@@ -44,7 +43,7 @@ class GameCascadeDeletionService
             $this->entityManager->remove($extension);
         }
 
-        $this->entityManager->flush();
+        //$this->entityManager->flush();
     }
 
     public function deleteCardsForExtension(Extension $extension)
@@ -52,9 +51,21 @@ class GameCascadeDeletionService
         $cards = $extension->getExtensionCardId();
 
         foreach ($cards as $card) {
+            $this->deleteComments($card);
             $this->entityManager->remove($card);
         }
-        $this->entityManager->flush();
+        //$this->entityManager->flush();
+    }
+
+    public function deleteComments(Card $card)
+    {
+        $comments = $card->getCardCommentaryId();
+
+        foreach ($comments as $comment) {
+            $this->entityManager->remove($comment);
+        }
+
+        //$this->entityManager->flush();
     }
 
     public function deleteDecks(Game $game)
@@ -68,7 +79,7 @@ class GameCascadeDeletionService
             $this->entityManager->remove($deck);
         }
 
-        $this->entityManager->flush();
+        //$this->entityManager->flush();
     }
 
     // Ajoutez les méthodes pour supprimer les cartes pour un deck si nécessaire
@@ -84,19 +95,10 @@ class GameCascadeDeletionService
             $this->entityManager->remove($collection);
         }
 
-        $this->entityManager->flush();
+        //$this->entityManager->flush();
     }
 
     // Ajoutez les méthodes pour supprimer les cartes pour une collection si nécessaire
 
-    public function deleteComments(Game $game)
-    {
-        $comments = $game->getComments();
 
-        foreach ($comments as $comment) {
-            $this->entityManager->remove($comment);
-        }
-
-        $this->entityManager->flush();
-    }
 }

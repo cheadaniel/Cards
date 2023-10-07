@@ -22,10 +22,10 @@ class CardFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         // Récupérez les extensions créées dans ExtensionFixtures
-        $setDeBaseExtension = $this->getReference('set_de_base_extension');
-        $madenExtension = $this->getReference('maden_extension');
-        $raidsSurOligarExtension = $this->getReference('raids_sur_oligar_extension');
-        $tumulteSurOligarExtension = $this->getReference('tumulte_sur_oligar_extension');
+        $setDeBaseExtension = $this->getReference('aoe-collection-2016-12-01');
+        $madenExtension = $this->getReference('maden-collection-2017-11-10');
+        $raidsSurOligarExtension = $this->getReference('raids-sur-oligar-collection-2018-05-25');
+        $tumulteSurOligarExtension = $this->getReference('tumulte-sur-oligar-collection-2018-11-09');
 
         // Chargez les données JSON pour chaque extension
         $setDeBaseCardsData = $this->loadJsonData('public/data/AoE-2016-12-01.json');
