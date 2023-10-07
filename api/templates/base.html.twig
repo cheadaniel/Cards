@@ -30,17 +30,17 @@
 				<li>
 					<a href="{{path('games')}}">Jeux</a>
 				</li>
-				{# {% if not app.user %} #}
 				<li>
 					<a href="{{path('app_users')}}">Utilisateurs</a>
 				</li>
-				<li>
-					<a href="{{path('app_register')}}">S'inscrire</a>
-				</li>
-				<li>
-					<a href="{{path('app_login')}}">Connexion</a>
-				</li>
-				{# {% endif %} #}
+				{% if not app.user %}
+					<li>
+						<a href="{{path('app_register')}}">S'inscrire</a>
+					</li>
+					<li>
+						<a href="{{path('app_login')}}">Connexion</a>
+					</li>
+				{% endif %}
 				{% if app.user %}
 
 					{# {% if is_granted('ROLE_ADMIN') %} #}
@@ -49,19 +49,11 @@
 					</li>
 					{# {%  endif %} #}
 					<li>
-						<a href="{{path('my_account', {'id': app.user.id})}}">Mon compte</a>
+						<a href="{{path('my_account', {'userName': app.user.name})}}">Mon compte</a>
 					</li>
 					<li>
 						<a href="{{path('contact', {'id': app.user.id})}}">Contact</a>
 					</li>
-					<li>
-						<a href="">Mes locations</a>
-					</li>
-					{# {% if is_granted('ROLE_ADMIN') %} #}
-					<li>
-						<a href="">Location Admin</a>
-					</li>
-					{# {%  endif %} #}
 					<li>
 						<a href="{{path('app_logout')}}">Déconnexion</a>
 					</li>

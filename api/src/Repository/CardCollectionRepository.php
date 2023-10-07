@@ -39,7 +39,7 @@ class CardCollectionRepository extends ServiceEntityRepository
         }
     }
 
-    public function findOneByCardAndCollect($card,$collect)
+    public function findOneByCardAndCollect($card, $collect)
     {
         return $this->createQueryBuilder('cc')
             ->andWhere('cc.Card_id = :card')
@@ -48,6 +48,15 @@ class CardCollectionRepository extends ServiceEntityRepository
             ->setParameter('collect', $collect)
             ->getQuery()
             ->getOneOrNullResult();
+    }
+
+    public function findCardsByCollect($collect)
+    {
+        return $this->createQueryBuilder('cc')
+            ->where('cc.Collect_id = :collect')
+            ->setParameter('collect', $collect)
+            ->getQuery()
+            ->getResult();
     }
 
     //    /**

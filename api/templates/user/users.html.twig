@@ -19,7 +19,7 @@
 					<tr>
 						<td>{{user.name}}</td>
 						<td>
-							<a href="">Voir Collection</a>
+							<a href="{{path('user_collect', {'userName': app.user.name})}}">Voir Collection</a>
 						</td>
 						<td>
 							<button class="contact-btn" data-user-recever-id={{user.id}}>Contacter</button>

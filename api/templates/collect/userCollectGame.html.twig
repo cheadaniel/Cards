@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{userName}}
+{% endblock %}
+
+{% block body %}
+
+	<h1>Jeux de {{userName}}</h1>
+
+	<div class="game-container">
+		{% for collect in collects %}
+			<a href="{{ path('user_collect_extensions', {'userName': userName,'gameName': collect.getGameId.name}) }}" class="game">
+				<div>
+					<img src=" {{ asset('media/images/' ~ collect.getGameId.name ~ '/'  ~ collect.getGameId.image ) }}" alt="{{ collect.getGameId.name }}" class="game_img">
+					<p class="game-name">{{ collect.getGameId.name }}</p>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{extensionName}}
+{% endblock %}
+
+
+{% block body %}
+	<div class="card-container">
+		{% for card in cards %}
+			<div class="card-cart">
+				<div>
+					<div>
+						<p class="card-name ">{{ card.name }}</p>
+						{% for userCard in userOwnCards %}
+							{% if userCard.getCardId.id == card.id %}
+								<div class="have">
+									<p class="quantity">
+										Nombre possédé :
+										{{userCard.getQuantity}}
+									</p>
+									{% if userCard.isFavourite %}
+										<p class="favourite"></p>
+									{% else %}
+										<p class="not-favourite"></p>
+									{% endif %}
+
+									{% if userCard.isTradable %}
+										<p class="tradable">Echangeable</p>
+									{% else %}
+										<p class="not-tradable">Non Echangeable</p>
+									{% endif %}
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+
+					<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extensionName ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
+				</div>
+				<div class="card-action">
+					<a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link">Voir la carte
+					</a>
+				</div>
+
+
+				{% if app.user.name == userName %}
+					{% for userCard in userOwnCards %}
+						{% if userCard.getCardId.id == card.id %}
+							<div class="have">
+								<a href="{{ path('favourite', {'userId': app.user.id, 'userCardCollectionId':userCard.id}) }}">Favorite</a>
+								<a href="{{ path('tradable', {'userId': app.user.id, 'userCardCollectionId':userCard.id,}) }}">Echangeable</a>
+							</div>
+						{% endif %}
+					{% endfor %}
+
+					<div>
+						<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">-</a>
+						<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">+</a>
+					</div>
+				{% endif %}
+
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/userCards.js') }}" type="module"></script>
+{% endblock %}
