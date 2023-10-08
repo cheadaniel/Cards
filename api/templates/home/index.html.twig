@@ -6,7 +6,7 @@
 {% block body %}
 	<div class="home">
 		<h1>Bienvenue sur VaulTCG</h1>
-		<div>
+		<div id="carousel">
 			<p>Une sélection de 10 cartes aléatoires, venez découvrir de nouveaux jeux !
 			</p>
 			<div class="card-container">
@@ -14,7 +14,7 @@
 					<div class="carousel">
 						{% for card in randomCards %}
 							<div class="card-cart carousel-slide">
-								<div>
+								<div class="carte">
 									<p class="card-name">{{ card.name }}</p>
 									<img src="{{ asset('media/images/' ~ card.getGameId.name ~ '/' ~ card.getExtensionId.name ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
 								</div>
@@ -28,8 +28,8 @@
 					</div>
 
 				</div>
-				<button class="carousel-prev">Précédent</button>
-				<button class="carousel-next">Suivant</button>
+				<button class="carousel-prev"> < </button>
+				<button class="carousel-next"> > </button>
 			</div>
 		</div>
 

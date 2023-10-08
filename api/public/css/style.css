@@ -141,40 +141,7 @@ body.light-mode {
     display: none;
 }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
 
-.carousel {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.carousel-slide {
-    flex: 0 0 100%;
-}
-
-.carousel-prev,
-.carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 1rem 2rem;
-    cursor: pointer;
-}
-
-.carousel-prev {
-    left: 1rem;
-}
-
-.carousel-next {
-    right: 1rem;
-}
 
 /********************** HEADER **********************/
 .btn-toogle {
@@ -210,7 +177,7 @@ header {
     margin-bottom: 5rem;
 }
 
-.navbar{
+.navbar {
     width: 100%;
 }
 
@@ -227,3 +194,89 @@ header {
 }
 
 /********************** HEADER FIN **********************/
+
+/********************** HOME **********************/
+.home #carousel {
+    margin: 3rem 0;
+}
+
+.card-container {
+    margin: 2rem 0;
+}
+
+.card-cart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carte {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70rem;
+}
+
+.card-name {
+    font-size: 3.5rem;
+    margin: 3rem;
+    color: var(--rouge);
+}
+
+.card_img {
+    height: 100%;
+    box-shadow: 2rem 0 3rem -0.5rem rgba(0, 0, 0, 9.5);
+}
+
+.card-action {
+    margin: 3rem 0;
+}
+
+.card-link {
+    font-size: 3rem;
+    border: 0.25rem solid var(--rouge);
+    padding: 2rem 9rem;
+    border-radius: 4.5rem;
+    background-color: var(--rouge);
+    font-weight: bolder;
+    box-shadow: 0.5rem 0 2.2rem -1rem rgba(0, 0, 0, 9.5);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 85%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 11.5rem;
+    font-size: 4rem;
+}
+
+.carousel-prev {
+    left: 1rem;
+}
+
+.carousel-next {
+    right: 1rem;
+}
+
+/********************** HOME FIN **********************/
