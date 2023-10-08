@@ -28,6 +28,9 @@ class ExtensionFormType extends AbstractType
             ])
             ->add("Envoyer", SubmitType::class, [
                 'label' => 'Créer',
+                'attr' => [
+                    'class' => 'btn',
+                ],
             ]);
     }
 

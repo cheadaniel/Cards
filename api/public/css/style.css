@@ -286,9 +286,15 @@ header {
 
 /********************** HOME FIN **********************/
 
-/********************** REGISTER/LOING **********************/
+/********************** REGISTER/LOING/FORM **********************/
 .inscription form,
-.connexion form {
+.connexion form,
+.create-game form,
+.edit-game form,
+.create-extension form,
+.edit-extension form,
+.create-carte form,
+.edit-carte form {
     margin: 5rem;
     border: 0.3rem solid var(--bleu);
     padding: 3rem;
@@ -297,7 +303,13 @@ header {
 }
 
 .inscription .btn,
-.connexion .btn {
+.connexion .btn,
+.create-game .btn,
+.edit-game .btn,
+.create-extension .btn,
+.edit-extension .btn,
+.create-carte .btn,
+.edit-carte .btn {
     color: var(--orange);
     font-size: 2.2rem;
     padding: 2rem 3rem;
@@ -305,7 +317,9 @@ header {
 }
 
 #registration_form div,
-.connexion form div {
+.connexion form div,
+#game_form div,
+#extension_form div {
     margin: 2rem;
     display: flex;
     flex-direction: column;
@@ -313,12 +327,16 @@ header {
 }
 
 #registration_form div label,
-.connexion form label {
+.connexion form label,
+#game_form div label,
+#extension_form div label {
     margin: 2rem 0;
 }
 
 #registration_form div input,
-.connexion form input {
+.connexion form input,
+#game_form div input,
+#extension_form div input {
     padding: 1rem;
     width: 55%;
     border: var(--rouge) solid .25rem;
@@ -326,36 +344,42 @@ header {
     font-size: 2.2rem;
 }
 
-/********************** REGISTER/LOING FIN **********************/
+/********************** REGISTER/LOING/FORM FIN **********************/
 
 /********************** GAME **********************/
-.new-game {
+.new-game,
+.new-extension {
     margin: 2rem 0;
 }
 
-.new-game a {
+.new-game a,
+.new-extension a {
     color: var(--rouge);
 }
 
-.game-container {
+.game-container,
+.extension-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.game-card {
+.game-card,
+.extension-card {
     border: solid .2rem var(--rouge);
     margin: 2rem;
     width: 75%;
 }
 
-.game {
+.game,
+.extension {
     display: block;
     padding-bottom: 3rem;
     border-bottom: 0.15rem dashed var(--rouge);
 }
 
-.game-name {
+.game-name,
+.extension-name {
     margin: 2rem 0;
     border-bottom: dashed .15rem var(--rouge);
     padding-bottom: 2rem;
@@ -374,11 +398,14 @@ header {
     font-size: 1.5rem;
 }
 
-.delete-game {
+.delete-game,
+.delete-extension {
     border-right: 0.15rem dashed var(--rouge);
 }
 
-#collection .game {
+#collection .game,
+#collection .extension {
     border: none
 }
+
 /********************** GAME FIN **********************/
