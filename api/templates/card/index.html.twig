@@ -8,94 +8,94 @@
 
 
 	<div class="card" id="Carte">
-		<div class="carte-infos">
-			<h3>
-				<td>{{ card.name }}</td>
-			</h3>
-			<div>
-				<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extensionName ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="carte-img">
+		<div class="container-flex">
+			<div class="carte-infos">
+				<h1 class="card-name">
+					{{ card.name }}
+				</h1>
+				<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extensionName ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
 			</div>
-			<table>
 
-				<tr>
-					<th>Artiste</th>
-					<td>{{ card.artist }}</td>
-				</tr>
-				<tr>
-					<th>Numéro</th>
-					<td>{{ card.number }}</td>
-				</tr>
-				<tr>
-					<th>Rareté</th>
-					<td>{{ card.rarity }}</td>
-				</tr>
-				<tr>
-					<th>Type</th>
-					<td>{{ card.type }}</td>
-				</tr>
-				<tr>
-					<th>Description</th>
-					<td>{{ card.description }}</td>
-				</tr>
-			</table>
 			{% if app.user %}
-				<div class="carte-action">
-					<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
-						<button>-</button>
-					</a>
-					<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
-						<button>+</button>
-					</a>
+				<div class="card-action">
+					<div class="carte-quantity">
+						<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}" class="decrement-button">
+							-
+						</a>
+						<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
+							+
+						</a>
+					</div>
 				</div>
 			{% endif %}
-
 		</div>
+		<table id="card-table-description">
+			<tr>
+				<th>Artiste</th>
+				<td>{{ card.artist }}</td>
+			</tr>
+			<tr>
+				<th>Numéro</th>
+				<td>{{ card.number }}</td>
+			</tr>
+			<tr>
+				<th>Rareté</th>
+				<td>{{ card.rarity }}</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>{{ card.type }}</td>
+			</tr>
+			<tr class="description-row">
+				<th>Description</th>
+				<td>{{ card.description }}</td>
+			</tr>
+		</table>
 
-		<div class="carte-commentaire">
-			<h4>Commentaires</h4>
-			<div class="comments">
-				{% for comment in comments %}
-					<div class="commentaire" data-id="{{ comment.id }}">
+	</div>
+
+	<div class="carte-commentaire">
+		<h2>Commentaires</h2>
+		<div class="comments">
+			{% for comment in comments %}
+				<div class="commentaire" data-id="{{ comment.id }}">
+					<div>
 						<div>
-							<div>
-								<p>Par :
-									{{comment.getUserId.name}}</p>
-								<p>Créé le :
-									{{ comment.createdAt | date('Y-m-d H:i:s') }}</p>
-							</div>
-							<p class="content" data-id="{{ comment.id }}">{{ comment.content }}</p>
+							<p>Par :
+								{{comment.getUserId.name}}</p>
+							<p>Créé le :
+								{{ comment.createdAt | date('Y-m-d H:i') }}</p>
 						</div>
-						{% if app.user or is_granted('ROLE_ADMIN') %}
-							<div>
-								<button>
-									<a href="{{ path('delete_commentary', {'userId': app.user.id,'commentary_id':comment.id}) }}" class="delete-commentary" data-id="{{ comment.id }}">
-										Supprimer
-									</a>
-								</button>
-								<button class="edit-commentary" data-id="{{ comment.id }}">Modifier</button>
-								<form class="edit-form" data-id="{{ comment.id }}" method="POST">
-									<textarea class="edit-content" name="edit-content">{{ comment.content }}</textarea>
-									<button class="save-edit" data-id="{{ comment.id }}">Enregistrer</button>
-								</form>
-							</div>
-						{% endif %}
+						<p class="content" data-id="{{ comment.id }}">{{ comment.content }}</p>
 					</div>
+					{% if app.user or is_granted('ROLE_ADMIN') %}
+						<div class="commentaire-action">
+							<a href="{{ path('delete_commentary', {'userId': app.user.id,'commentary_id':comment.id}) }}" class="delete-commentary" data-id="{{ comment.id }}">
+								Supprimer
+							</a>
+							<button class="edit-commentary btn" data-id="{{ comment.id }}">Modifier</button>
+							<form class="edit-form" data-id="{{ comment.id }}" method="POST">
+								<textarea class="edit-content" name="edit-content">{{ comment.content }}</textarea>
+								<button class="save-edit btn" data-id="{{ comment.id }}">Enregistrer</button>
+							</form>
+						</div>
+					{% endif %}
+				</div>
 
-				{% endfor %}
-			</div>
-			<div class="new-comment">
-				<form class="commentForm">
+			{% endfor %}
+		</div>
+		<div class="new-comment">
+			<form class="commentForm">
+				<h3>Nouveau Commentaire</h3>
+				<div>
 					<label for="commentContent">Contenu du commentaire :</label>
-					<input type="text" name="commentContent" id="commentContent" rows="4" cols="50" required>
-					<button type="submit">Envoyer</button>
-				</form>
-			</div>
-
+					<input type="text" name="commentContent" id="commentContent" required>
+				</div>
+				<div>
+					<button type="submit" class="btn">Envoyer</button>
+				</div>
+			</form>
 		</div>
 	</div>
-{% endblock %}
-
-
-{% block javascripts %}
-	<script src="{{ asset('js/commentary.js') }}" type="module"></script>
-{% endblock %}
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('js/commentary.js') }}" type="module"></script>{% endblock %}

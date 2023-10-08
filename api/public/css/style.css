@@ -1,5 +1,7 @@
 :root {
     --bleu: #7e7eff;
+    --bleu-opaque: rgba(126, 126, 255, 0.7);
+    --bleu-clair: rgba(126, 126, 255, 0.1);
     --rouge: #a12525;
     --orange: #fea711;
     --Lugrasimo: 'Lugrasimo', sans-serif;
@@ -150,6 +152,7 @@ body.light-mode {
     background-color: var(--rouge);
     font-weight: bolder;
     box-shadow: 0.5rem 0 2.2rem -1rem rgba(0, 0, 0, 9.5);
+    cursor: pointer;
 }
 
 
@@ -295,7 +298,8 @@ header {
 .create-extension form,
 .edit-extension form,
 .create-carte form,
-.edit-carte form {
+.edit-carte form,
+.commentForm {
     margin: 5rem;
     border: 0.3rem solid var(--bleu);
     padding: 3rem;
@@ -310,7 +314,8 @@ header {
 .create-extension .btn,
 .edit-extension .btn,
 .create-carte .btn,
-.edit-carte .btn {
+.edit-carte .btn,
+.commentForm .btn {
     color: var(--orange);
     font-size: 2.2rem;
     padding: 2rem 3rem;
@@ -321,7 +326,8 @@ header {
 .connexion form div,
 #game_form div,
 #extension_form div,
-#card_form div {
+#card_form div,
+.commentForm div {
     margin: 2rem;
     display: flex;
     flex-direction: column;
@@ -332,7 +338,8 @@ header {
 .connexion form label,
 #game_form div label,
 #extension_form div label,
-#card_form div label {
+#card_form div label,
+.commentForm div label {
     margin: 2rem 0;
 }
 
@@ -341,7 +348,8 @@ header {
 #game_form div input,
 #extension_form div input,
 #card_form div input,
-#card_form div textarea {
+#card_form div textarea,
+.commentForm div input {
     padding: 1rem;
     width: 55%;
     border: var(--rouge) solid .25rem;
@@ -353,9 +361,19 @@ header {
     height: 15rem;
 }
 
+
+.commentForm div input {
+    width: 110%;
+    height: 15rem;
+}
+
+.commentForm h3 {
+    color: var(--rouge);
+}
+
 /********************** REGISTER/LOING/FORM FIN **********************/
 
-/********************** GAME **********************/
+/********************** GAME/EXTENSION/CARDS **********************/
 .new-game,
 .new-extension,
 .new-card {
@@ -376,7 +394,8 @@ header {
 .game-container,
 .extension-container,
 .card-container,
-#cards {
+#cards,
+#Carte {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -384,37 +403,48 @@ header {
 
 .game-card,
 .extension-card,
-#cards .card-cart {
+#cards .card-cart,
+#Carte {
     border: solid .2rem var(--rouge);
     margin: 2rem;
     width: 75%;
 }
 
+#Carte {
+    width: inherit;
+}
+
 .game,
 .extension,
-#cards .carte-card {
+#cards .carte-card,
+#Carte .container-flex .carte-infos {
     display: block;
     padding-bottom: 3rem;
     border-bottom: 0.15rem dashed var(--rouge);
 }
 
-#cards .carte-card {
+#cards .carte-card,
+#Carte .container-flex,
+#Carte .container-flex .carte-infos {
     width: 100%;
 }
 
-#cards .carte-card img {
+#cards .carte-card img,
+#Carte .container-flex .carte-infos img {
     width: 75%;
 }
 
 .game-name,
 .extension-name,
-#cards .card-name {
+#cards .card-name,
+#Carte .container-flex .card-name {
     margin: 2rem 0;
     border-bottom: dashed .15rem var(--rouge);
     padding-bottom: 2rem;
 }
 
-#cards .card-action {
+#cards .card-action,
+#Carte .container-flex .card-action {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -431,7 +461,8 @@ header {
     border-radius: 6rem;
 }
 
-#cards .carte-quantity {
+#cards .carte-quantity,
+#Carte .container-flex .carte-quantity {
     width: 100%;
     border-top: 0.15rem dashed var(--rouge);
     border-bottom: 0.15rem dashed var(--rouge);
@@ -490,4 +521,118 @@ header {
     border-bottom: 0.15rem dashed var(--rouge);
 }
 
-/********************** GAME FIN **********************/
+#card-table-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+#card-table-description tr {
+    display: flex;
+    padding: 3rem;
+    border-bottom: 0.15rem dashed var(--rouge);
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#card-table-description .description-row {
+    border-bottom: none;
+}
+
+.description-row td {
+    font-size: 1.4rem;
+    text-align: right;
+    width: 50%;
+}
+
+.carte-commentaire {
+    margin: 5rem 0;
+    width: inherit;
+    border: 0.15rem solid var(--rouge);
+}
+
+.carte-commentaire h2 {
+    color: var(--rouge);
+    margin: 2rem 0;
+}
+
+.comments {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.commentaire {
+    background-color: var(--bleu-opaque);
+    width: 100%;
+    text-align: left;
+    color: var(--rouge);
+    margin: .5rem;
+}
+
+.commentaire div div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+.commentaire div div p {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.commentaire .content {
+    font-weight: 500;
+}
+
+.commentaire-action {
+    text-align: right;
+}
+
+.commentaire-action a,
+.commentaire-action .btn {
+    color: var(--rouge);
+    font-size: 1.2rem;
+    padding: 0 2rem;
+    font-family: var(--Lugrasimo);
+    background-color: var(--orange);
+    border: .5rem solid var(--orange);
+    border-radius: 2rem;
+    text-align: right;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.commentaire-action .btn:disabled {
+    background-color: #fff;
+    border: .5rem solid #fff;
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+.commentaire-action .edit-form {
+    text-align: left;
+    /* display: flex; */
+    text-align: left;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.commentaire-action .edit-form .edit-content {
+    width: 70%;
+    font-size: 1.2rem;
+    font-family: var(--Lugrasimo);
+    border-radius: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0rem;
+}
+
+/********************** GAME/EXTENSION/CARDS **********************/

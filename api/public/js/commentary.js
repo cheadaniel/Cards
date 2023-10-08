@@ -28,7 +28,7 @@ commentContainer.addEventListener('click', function (event) {
         if (editForm && commentaryContent) {
             event.target.disabled = true
             commentaryContent.style.display = 'none';
-            editForm.style.display = 'block';
+            editForm.style.display = 'flex';
         }
     }
 
