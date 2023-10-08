@@ -6,10 +6,10 @@
 {% block body %}
 
 	<div>
-		{# <form action="{{ path('book_search') }}" method="get" class="actions search">
-																							<input type="text" name="keyword" placeholder="Recherche...">
-																							<button type="submit">Rechercher</button>
-																						</form> #}
+		<form action="{{ path('search_users') }}" method="get" class="actions search-bar">
+			<input type="text" name="keyword" placeholder="Recherche...">
+			<button type="submit" class="search-btn btn">Rechercher</button>
+		</form>
 	</div>
 	<h1>Utilsateurs</h1>
 	<div>

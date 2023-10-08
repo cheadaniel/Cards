@@ -358,7 +358,8 @@ a:hover {
 #card_form div input,
 #card_form div textarea,
 .commentForm div input,
-.messageForm div input {
+.messageForm div input,
+.search-bar input {
     padding: 1rem;
     width: 55%;
     border: var(--rouge) solid .25rem;
@@ -773,7 +774,7 @@ aside {
     padding: 2rem 0;
 }
 
-.users-table .btn {
+.users-table .btn, .search-btn {
     font-size: 1.8rem;
     border: 0.25rem solid var(--orange);
     padding: 2rem 2rem;
@@ -784,7 +785,7 @@ aside {
     font-family: var(--Lugrasimo);
 }
 
-.users-table .btn:hover {
+.users-table .btn:hover, .search-btn:hover {
     color: var(--orange);
     background-color: var(--rouge);
 }
@@ -798,5 +799,9 @@ aside {
 .users-table tbody tr a:hover {
     color: var(--orange);
     background-color: var(--rouge);
+}
+
+.search-bar input {
+    border-radius: 5rem;
 }
 /********************** CONTACT FIN **********************/
