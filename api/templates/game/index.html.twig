@@ -5,32 +5,33 @@
 
 {% block body %}
 
-	<h1>Games</h1>
+	<h1>Jeux</h1>
 	{% if is_granted('ROLE_ADMIN') %}
 		<div class="new-game">
-			<a href="{{ path('create_game')}}">Nouveau jeu +
+			<a href="{{ path('create_game')}}">Ajouter un jeu +
 			</a>
 		</div>
 	{% endif %}
 	<div class="game-container">
 		{% for game in games %}
-			<a href="{{ path('game', {'gameName': game.name}) }}" class="game">
-				<div>
-					<img src=" {{ asset('media/images/' ~ game.name ~ '/'  ~ game.image ) }}" alt="{{ game.name }}" class="game_img">
-					<p class="game-name">{{ game.name }}</p>
-				</div>
-			</a>
-			{% if is_granted('ROLE_ADMIN') %}
-				<div class="admin-button">
-					<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
-						Supprimer
-					</a>
-					<a href="{{ path('edit_game', {'gameName': game.name}) }}" class="edit-game">
-						Modifier
-					</a>
-				</div>
-			{% endif %}
-
+			<div class="game-card">
+				<a href="{{ path('game', {'gameName': game.name}) }}" class="game">
+					<div>
+						<p class="game-name">{{ game.name }}</p>
+						<img src=" {{ asset('media/images/' ~ game.name ~ '/'  ~ game.image ) }}" alt="{{ game.name }}" class="game_img">
+					</div>
+				</a>
+				{% if is_granted('ROLE_ADMIN') %}
+					<div class="admin-button">
+						<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
+							Supprimer
+						</a>
+						<a href="{{ path('edit_game', {'gameName': game.name}) }}" class="edit-game">
+							Modifier
+						</a>
+					</div>
+				{% endif %}
+			</div>
 		{% endfor %}
 	</div>
 {% endblock %}

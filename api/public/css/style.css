@@ -327,3 +327,58 @@ header {
 }
 
 /********************** REGISTER/LOING FIN **********************/
+
+/********************** GAME **********************/
+.new-game {
+    margin: 2rem 0;
+}
+
+.new-game a {
+    color: var(--rouge);
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-card {
+    border: solid .2rem var(--rouge);
+    margin: 2rem;
+    width: 75%;
+}
+
+.game {
+    display: block;
+    padding-bottom: 3rem;
+    border-bottom: 0.15rem dashed var(--rouge);
+}
+
+.game-name {
+    margin: 2rem 0;
+    border-bottom: dashed .15rem var(--rouge);
+    padding-bottom: 2rem;
+}
+
+.admin-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-button a {
+    padding: 2rem 1rem;
+    width: 45%;
+    font-size: 1.5rem;
+}
+
+.delete-game {
+    border-right: 0.15rem dashed var(--rouge);
+}
+
+#collection .game {
+    border: none
+}
+/********************** GAME FIN **********************/
