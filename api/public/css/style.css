@@ -666,7 +666,7 @@ aside {
     width: 30%;
     float: left;
     background-color: var(--bleu);
-    border-radius: 5rem;
+    border-radius: 2rem;
 
 }
 
@@ -810,6 +810,10 @@ aside {
 /********************** CONTACT FIN **********************/
 
 @media screen and (min-width: 1024px) {
+
+    header {
+        flex-direction: row;
+    }
 
     .game-container,
     .extension-container,
