@@ -6,6 +6,7 @@
 {% block body %}
 	<div class="home">
 		<h1>Bienvenue sur VaulTCG</h1>
+		<p class="accroche">VaultTCG est une plateforme en ligne qui vous permet de gérer votre propre collection de cartes pour les jeux de cartes à échanger (TCG). En partageant votre profil avec vos amis, ils pourront voir quelles cartes vous possédez et vous proposer des échanges en fonction de leurs besoins. Vous avez également la possibilité de créer et de partager vos decks.</p>
 		<div id="carousel">
 			<p>Une sélection de 10 cartes aléatoires, venez découvrir de nouveaux jeux !
 			</p>
@@ -19,7 +20,7 @@
 									<img src="{{ asset('media/images/' ~ card.getGameId.name ~ '/' ~ card.getExtensionId.name ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
 								</div>
 								<div class="card-action">
-									<a href="{{ path('card', {'gameName': card.getGameId.name, 'extensionName':card.getExtensionId.name, 'cardName' : card.name}) }}" class="card-link">
+									<a href="{{ path('card', {'gameName': card.getGameId.name, 'extensionName':card.getExtensionId.name, 'cardName' : card.name}) }}" class="btn card-link">
 										Voir la carte
 									</a>
 								</div>
@@ -28,14 +29,17 @@
 					</div>
 
 				</div>
-				<button class="carousel-prev"> < </button>
-				<button class="carousel-next"> > </button>
+				<button class="carousel-prev">
+					<</button>
+						<button class="carousel-next">
+							>
+						</button>
+					</div>
+				</div>
+
 			</div>
-		</div>
+		{% endblock %}
 
-	</div>
-{% endblock %}
-
-{% block javascripts %}
-	<script src="{{ asset('js/home.js') }}" type="module"></script>
-{% endblock %}
+		{% block javascripts %}
+			<script src="{{ asset('js/home.js') }}" type="module"></script>
+		{% endblock %}

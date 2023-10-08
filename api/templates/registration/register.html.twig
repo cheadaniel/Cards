@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
 
-<div class="example-wrapper">
-		<h1>Register</h1>
-
+	<div class="inscription">
+		<h1>S'inscrire</h1>
 		{{ form(registrationForm) }}
 		</div>
 	{% endblock %}
