@@ -10,6 +10,7 @@
 a {
     text-decoration: none;
     color: var(--orange);
+    transition: background-color 0.45s;
 }
 
 li {
@@ -155,6 +156,15 @@ body.light-mode {
     cursor: pointer;
 }
 
+.home .card-action .btn {
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+.home .card-action .btn:hover {
+    color: var(--rouge);
+    background-color: var(--orange);
+}
 
 
 
@@ -206,6 +216,14 @@ header {
     padding: 0.5rem;
     margin: 0.5rem;
     font-weight: bold;
+}
+
+a:hover {
+    background-color: var(--rouge);
+}
+
+#logo a:hover {
+    background-color: #fff;
 }
 
 /********************** HEADER FIN **********************/
@@ -320,6 +338,21 @@ header {
     font-size: 2.2rem;
     padding: 2rem 3rem;
     font-family: var(--Lugrasimo);
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+.inscription .btn:hover,
+.connexion .btn:hover,
+.create-game .btn:hover,
+.edit-game .btn:hover,
+.create-extension .btn:hover,
+.edit-extension .btn:hover,
+.create-carte .btn:hover,
+.edit-carte .btn:hover,
+.commentForm .btn:hover {
+    color: var(--rouge);
+    background-color: var(--orange);
 }
 
 #registration_form div,
@@ -389,6 +422,15 @@ header {
     border-radius: 3.5rem;
     font-weight: bold;
     box-shadow: 2rem 0 3rem -0.5rem rgba(0, 0, 0, 9.5);
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+.new-game a:hover,
+.new-extension a:hover,
+.new-card a:hover {
+    color: var(--orange);
+    background-color: var(--rouge);
 }
 
 .game-container,
