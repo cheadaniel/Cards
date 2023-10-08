@@ -6,29 +6,31 @@
 
 
 {% block body %}
-	<div class="card-container">
+	<h1>Collection de
+		{{userName}}</h1>
+	<div class="card-container" id="cards">
 		{% for card in cards %}
 			<div class="card-cart">
-				<div>
+				<div class="carte-card">
 					<div>
 						<p class="card-name ">{{ card.name }}</p>
 						{% for userCard in userOwnCards %}
 							{% if userCard.getCardId.id == card.id %}
-								<div class="have">
-									<p class="quantity">
-										Nombre possédé :
+								<div class="carte-information have">
+									<p id="quantity-{{ card.id }}" data-quantity="{{ userCard.getQuantity }}">
+										Nombre possédé(s) :
 										{{userCard.getQuantity}}
 									</p>
 									{% if userCard.isFavourite %}
-										<p class="favourite"></p>
+										<p id="favourite-{{userCard.getCardId.id}}">Favorite</p>
 									{% else %}
-										<p class="not-favourite"></p>
+										<p id="not-favourite-{{userCard.getCardId.id}}">Non Favorite</p>
 									{% endif %}
 
 									{% if userCard.isTradable %}
-										<p class="tradable">Echangeable</p>
+										<p id="tradable-{{userCard.getCardId.id}}">Echangeable</p>
 									{% else %}
-										<p class="not-tradable">Non Echangeable</p>
+										<p id="not-tradable-{{userCard.getCardId.id}}">Non Echangeable</p>
 									{% endif %}
 								</div>
 							{% endif %}
@@ -44,19 +46,18 @@
 
 				{% if app.user %}
 					{% if app.user.name == userName %}
+						<div class="carte-quantity">
+							<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}" class="decrement-button" data-card-id="{{ card.id }}">-</a>
+							<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}" class="increment-button" data-card-id="{{ card.id }}">+</a>
+						</div>
 						{% for userCard in userOwnCards %}
 							{% if userCard.getCardId.id == card.id %}
-								<div class="have">
-									<a href="{{ path('favourite', {'userId': app.user.id, 'userCardCollectionId':userCard.id}) }}">Favorite</a>
-									<a href="{{ path('tradable', {'userId': app.user.id, 'userCardCollectionId':userCard.id,}) }}">Echangeable</a>
+								<div class="haveGot">
+									<a href="{{ path('favourite', {'userId': app.user.id, 'userCardCollectionId':userCard.id}) }}" class="favorite favorite-link" data-card-id="{{ card.id }}">Favorite</a>
+									<a href="{{ path('tradable', {'userId': app.user.id, 'userCardCollectionId':userCard.id,}) }}" class="tradable-link" data-card-id="{{ card.id }}">Echangeable</a>
 								</div>
 							{% endif %}
 						{% endfor %}
-
-						<div>
-							<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">-</a>
-							<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">+</a>
-						</div>
 					{% endif %}
 				{% endif %}
 			</div>

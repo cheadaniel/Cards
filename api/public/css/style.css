@@ -154,6 +154,7 @@ body.light-mode {
 
 
 
+
 /********************** HEADER **********************/
 .btn-toogle {
     border-radius: 1.5rem;
@@ -431,12 +432,14 @@ header {
     border-bottom: 0.15rem dashed var(--rouge);
 }
 
-#cards .admin-button {
+#cards .admin-button,
+.haveGot {
     width: 100%;
 }
 
 .admin-button,
-.carte-quantity {
+.carte-quantity,
+.haveGot {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -444,22 +447,42 @@ header {
 }
 
 .admin-button a,
-.carte-quantity a {
+.carte-quantity a,
+.haveGot a {
     padding: 2rem 2rem;
     width: 45%;
     font-size: 1.5rem;
 }
 
+.carte-quantity a {
+    font-size: 2.5rem;
+}
+
 .delete-game,
 .delete-extension,
 .delete-card,
-.decrement-button {
+.decrement-button,
+.favorite {
     border-right: 0.15rem dashed var(--rouge);
 }
 
 #collection .game,
 #collection .extension {
     border: none
+}
+
+.carte-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.carte-information p {
+    color: var(--orange);
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 0.15rem dashed var(--rouge);
 }
 
 /********************** GAME FIN **********************/
