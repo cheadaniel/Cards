@@ -3,23 +3,31 @@
 {% endblock %}
 
 {% block body %}
-	<aside>
-		<h1>Mes Contacts</h1>
-		<div class="">
-			{% for recever in recevers %}
+	<div class="clearfix">
+		<aside>
+			<h1>Mes Contacts</h1>
+			<div class="user-contact">
+				{% for recever in recevers %}
+					<div>
+						<a href="#" class="sendMessageLink" data-id="{{ recever.id }}">{{ recever.name }}</a>
+					</div>
+				{% endfor %}
+			</div>
+		</aside>
+		<div id="messageContainer"></div>
+		<div>
+			<form class="messageForm">
 				<div>
-					<a href="#" class="sendMessageLink" data-id="{{ recever.id }}">{{ recever.name }}</a>
+					<label for="messageContent">Contenu du message :</label>
+					<input id="messageContent" name="messageContent" rows="4" cols="50" required>
 				</div>
-			{% endfor %}
-
+				<div>
+					<button type="submit" class="btn">Envoyer</button>
+				</div>
+			</form>
 		</div>
-	</aside>
-	<div id="messageContainer"></div>
-	<div>
-		<form class="messageForm">
-			<label for="messageContent">Contenu du message :</label>
-			<input id="messageContent" name="messageContent" rows="4" cols="50" required></input>
-		<button type="submit">Envoyer</button>
-	</form>
-</div>{% endblock %}{% block javascripts %}
-<script src="{{ asset('js/contact.js') }}" type="module"></script>{% endblock %}
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('js/contact.js') }}" type="module"></script>
+{% endblock %}

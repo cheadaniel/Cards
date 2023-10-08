@@ -103,48 +103,6 @@ body.light-mode {
     background-color: #fff;
 }
 
-
-.message {
-    margin: 0.5rem 0
-}
-
-.message.right {
-    text-align: right;
-    background-color: #c0e2d8;
-    margin-right: 1rem;
-}
-
-/* Styles CSS pour aligner les messages du destinataire à gauche */
-.message.left {
-    text-align: left;
-    background-color: #f2f2f2;
-    margin-left: 1rem;
-}
-
-.message-timestamp {
-    font-size: 0.8rem;
-    color: #999;
-}
-
-.timestamp-right {
-    float: right;
-    /* Alignement à droite pour l'heure des messages de l'utilisateur */
-}
-
-.timestamp-left {
-    float: left;
-    /* Alignement à gauche pour l'heure des messages de l'autre personne */
-}
-
-/* Ne pas afficher le formulaire d'envoi de messsage au chargement de la page, et l'afficher seuelement lorsque l'on clique sur un pseudo */
-.messageForm {
-    display: none;
-}
-
-.edit-form {
-    display: none;
-}
-
 .btn {
     font-size: 3rem;
     border: 0.25rem solid var(--rouge);
@@ -308,6 +266,16 @@ a:hover {
     right: 1rem;
 }
 
+#mon-profil .card-link {
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+#mon-profil .card-link:hover {
+    color: var(--rouge);
+    background-color: var(--orange);
+}
+
 /********************** HOME FIN **********************/
 
 /********************** REGISTER/LOING/FORM **********************/
@@ -319,7 +287,8 @@ a:hover {
 .edit-extension form,
 .create-carte form,
 .edit-carte form,
-.commentForm {
+.commentForm,
+.messageForm {
     margin: 5rem;
     border: 0.3rem solid var(--bleu);
     padding: 3rem;
@@ -335,7 +304,8 @@ a:hover {
 .edit-extension .btn,
 .create-carte .btn,
 .edit-carte .btn,
-.commentForm .btn {
+.commentForm .btn,
+.messageForm .btn {
     color: var(--orange);
     font-size: 2.2rem;
     padding: 2rem 3rem;
@@ -352,7 +322,8 @@ a:hover {
 .edit-extension .btn:hover,
 .create-carte .btn:hover,
 .edit-carte .btn:hover,
-.commentForm .btn:hover {
+.commentForm .btn:hover,
+.messageForm .btn:hover {
     color: var(--rouge);
     background-color: var(--orange);
 }
@@ -362,7 +333,8 @@ a:hover {
 #game_form div,
 #extension_form div,
 #card_form div,
-.commentForm div {
+.commentForm div,
+.messageForm div {
     margin: 2rem;
     display: flex;
     flex-direction: column;
@@ -374,7 +346,8 @@ a:hover {
 #game_form div label,
 #extension_form div label,
 #card_form div label,
-.commentForm div label {
+.commentForm div label,
+.messageForm div label {
     margin: 2rem 0;
 }
 
@@ -384,7 +357,9 @@ a:hover {
 #extension_form div input,
 #card_form div input,
 #card_form div textarea,
-.commentForm div input {
+.commentForm div input,
+.messageForm div input,
+.search-bar input {
     padding: 1rem;
     width: 55%;
     border: var(--rouge) solid .25rem;
@@ -640,7 +615,8 @@ a:hover {
 }
 
 .commentaire-action a,
-.commentaire-action .btn {
+.commentaire-action .btn,
+.message .edit-form .btn {
     color: var(--rouge);
     font-size: 1.2rem;
     padding: 0 2rem;
@@ -653,23 +629,25 @@ a:hover {
     cursor: pointer;
 }
 
-.commentaire-action .btn:disabled {
+.commentaire-action .btn:disabled,
+.edit-message:disabled {
     background-color: #fff;
     border: .5rem solid #fff;
     cursor: not-allowed;
     opacity: 0.2;
 }
 
-.commentaire-action .edit-form {
+.commentaire-action .edit-form,
+.message .edit-form {
     text-align: left;
-    /* display: flex; */
     text-align: left;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.commentaire-action .edit-form .edit-content {
+.commentaire-action .edit-form .edit-content,
+.message .edit-form .edit-content {
     width: 70%;
     font-size: 1.2rem;
     font-family: var(--Lugrasimo);
@@ -679,4 +657,186 @@ a:hover {
     padding: 0rem;
 }
 
-/********************** GAME/EXTENSION/CARDS **********************/
+/********************** GAME/EXTENSION/CARDS FIN**********************/
+
+/********************** CONTACT **********************/
+
+
+aside {
+    width: 30%;
+    float: left;
+    background-color: var(--bleu);
+    border-radius: 5rem;
+
+}
+
+#messageContainer {
+    margin-left: 35%;
+    border: 0.15rem solid var(--rouge);
+}
+
+.message-container .btn,
+.message-container a {
+    font-size: 0.5rem;
+    padding: 0.1rem 0;
+    color: var(--orange);
+    font-family: var(--Lugrasimo);
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.user-contact {
+    margin: 2rem 0;
+}
+
+.message {
+    margin: 0.5rem 0
+}
+
+.message.right {
+    text-align: right;
+    background-color: #c0e2d8;
+    margin-right: 1rem;
+}
+
+/* Styles CSS pour aligner les messages du destinataire à gauche */
+.message.left {
+    text-align: left;
+    background-color: #f2f2f2;
+    margin-left: 1rem;
+}
+
+.message-timestamp {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.timestamp-right {
+    float: right;
+    /* Alignement à droite pour l'heure des messages de l'utilisateur */
+}
+
+.timestamp-left {
+    float: left;
+    /* Alignement à gauche pour l'heure des messages de l'autre personne */
+}
+
+/* Ne pas afficher le formulaire d'envoi de messsage au chargement de la page, et l'afficher seuelement lorsque l'on clique sur un pseudo */
+.messageForm {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 3rem 0;
+}
+
+.messageForm div {
+    align-items: flex-end;
+    width: 100%;
+    margin: 0;
+}
+
+.edit-form {
+    display: none;
+}
+
+.messageForm .btn {
+    margin: 2rem 0;
+    padding: 2rem 3rem;
+}
+
+.users-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.users-table tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.users-table tbody tr {
+    margin: 1rem 0;
+    border: var(--bleu) 0.15rem dashed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.users-table .btn,
+.search-btn {
+    font-size: 1.8rem;
+    border: 0.25rem solid var(--orange);
+    padding: 2rem 2rem;
+    background-color: var(--orange);
+    color: var(--rouge);
+    transition: color .5s;
+    transition: background-color .5s;
+    font-family: var(--Lugrasimo);
+}
+
+.users-table .btn:hover,
+.search-btn:hover {
+    color: var(--orange);
+    background-color: var(--rouge);
+}
+
+.users-table tbody tr a {
+    padding: 2rem;
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+.users-table tbody tr a:hover {
+    color: var(--orange);
+    background-color: var(--rouge);
+}
+
+.search-bar input {
+    border-radius: 5rem;
+}
+
+/********************** CONTACT FIN **********************/
+
+@media screen and (min-width: 1024px) {
+
+    .game-container,
+    .extension-container,
+    .card-container,
+    #cards {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .game-card,
+    .extension-card {
+        width: 40%;
+    }
+
+    #cards .card-cart {
+        width: 30%
+    }
+
+    #Carte {
+        margin: auto;
+        width: 45%;
+    }
+
+    .commentForm div input {
+        width: 100%;
+    }
+}

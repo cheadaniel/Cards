@@ -27,7 +27,7 @@ document.querySelectorAll('.sendMessageLink').forEach(link => {
         // Appel de la fonction pour effectuer la première requête ajax qui affichera la conversation associé 
         fetchAndInsertData(urlWithUserId, messageContainer)
         messageForm.setAttribute('data-id', userId);
-        messageForm.style.display = 'block';
+        messageForm.style.display = 'flex';
     })
 })
 
@@ -60,7 +60,7 @@ messageContainer.addEventListener('click', function (event) {
         if (editForm && messageContent) {
             event.target.disabled = true
             messageContent.style.display = 'none';
-            editForm.style.display = 'block';
+            editForm.style.display = 'flex';
         }
     }
 
