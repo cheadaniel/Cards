@@ -774,7 +774,8 @@ aside {
     padding: 2rem 0;
 }
 
-.users-table .btn, .search-btn {
+.users-table .btn,
+.search-btn {
     font-size: 1.8rem;
     border: 0.25rem solid var(--orange);
     padding: 2rem 2rem;
@@ -785,7 +786,8 @@ aside {
     font-family: var(--Lugrasimo);
 }
 
-.users-table .btn:hover, .search-btn:hover {
+.users-table .btn:hover,
+.search-btn:hover {
     color: var(--orange);
     background-color: var(--rouge);
 }
@@ -804,4 +806,37 @@ aside {
 .search-bar input {
     border-radius: 5rem;
 }
+
 /********************** CONTACT FIN **********************/
+
+@media screen and (min-width: 1024px) {
+
+    .game-container,
+    .extension-container,
+    .card-container,
+    #cards {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .game-card,
+    .extension-card {
+        width: 40%;
+    }
+
+    #cards .card-cart {
+        width: 30%
+    }
+
+    #Carte {
+        margin: auto;
+        width: 45%;
+    }
+
+    .commentForm div input {
+        width: 100%;
+    }
+}
