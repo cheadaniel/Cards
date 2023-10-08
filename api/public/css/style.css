@@ -156,12 +156,14 @@ body.light-mode {
     cursor: pointer;
 }
 
-.home .card-action .btn {
+.home .card-action .btn,
+#cards .card-cart .card-action a {
     transition: color .5s;
     transition: background-color .5s;
 }
 
-.home .card-action .btn:hover {
+.home .card-action .btn:hover,
+#cards .card-cart .card-action a:hover {
     color: var(--rouge);
     background-color: var(--orange);
 }
