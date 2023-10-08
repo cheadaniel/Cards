@@ -14,16 +14,18 @@ class GameFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('Name', TextType::class, [
-            'label' => 'Nom'
-        ])
-        ->add('Image', TextType::class, [
-            'label' => 'Url de l\'image'
-        ])
-        ->add("Envoyer", SubmitType::class, [
-            'label' => 'Créer',
-        ])
-        ;
+            ->add('Name', TextType::class, [
+                'label' => 'Nom'
+            ])
+            ->add('Image', TextType::class, [
+                'label' => 'Url de l\'image'
+            ])
+            ->add("Envoyer", SubmitType::class, [
+                'label' => 'Créer',
+                'attr' => [
+                    'class' => 'btn',
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

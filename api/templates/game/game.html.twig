@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block body %}
-
 	<h1>
 		{{gameName}}
 	</h1>
@@ -17,22 +16,24 @@
 	{% endif %}
 	<div class="extension-container">
 		{% for extension in extensions %}
-			<a href="{{ path('extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="extension">
-				<div>
-					<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extension.image ) }}" alt="{{ extension.name }}" class="extension_img">
-					<p class="extension-name">{{ extension.name }}</p>
-				</div>
-			</a>
-			{% if is_granted('ROLE_ADMIN') %}
-				<div class="admin-button">
-					<a href="{{ path('delete_extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="delete-extension">
-						Supprimer
-					</a>
-					<a href="{{ path('edit_extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="edit-extension">
-						Modifier
-					</a>
-				</div>
-			{% endif %}
+			<div class="extension-card">
+				<a href="{{ path('extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="extension">
+					<div>
+						<p class="extension-name">{{ extension.name }}</p>
+						<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extension.image ) }}" alt="{{ extension.name }}" class="extension_img">
+					</div>
+				</a>
+				{% if is_granted('ROLE_ADMIN') %}
+					<div class="admin-button">
+						<a href="{{ path('delete_extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="delete-extension">
+							Supprimer
+						</a>
+						<a href="{{ path('edit_extension', {'gameName': gameName, 'extensionName':extension.name}) }}" class="edit-extension">
+							Modifier
+						</a>
+					</div>
+				{% endif %}
+			</div>
 		{% endfor %}
 	</div>
 {% endblock %}
