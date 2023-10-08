@@ -45,7 +45,7 @@ class RegistrationController extends AbstractController
             $user->setRoles(["ROLE_USER"]);
 
             $parisTimeZone = new DateTimeZone('Europe/Paris');
-            $createdAt = new DateTimeImmutable('now',$parisTimeZone); // Créez une nouvelle instance de DateTime avec la date et l'heure actuelles
+            $createdAt = new DateTimeImmutable('now',$parisTimeZone); // Crée une nouvelle instance de DateTime avec la date et l'heure actuelles
             $user->setCreatedAt($createdAt);
 
             $entityManager->persist($user);

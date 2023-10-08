@@ -6,11 +6,12 @@
 
 {% block body %}
 	<h2>{{extensionName}}</h2>
-
-	<div class="new-card">
-		<a href="{{ path('create_card', {'gameName': gameName, 'extensionName': extensionName})}}">Nouvelle carte +
-		</a>
-	</div>
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="new-card">
+			<a href="{{ path('create_card', {'gameName': gameName, 'extensionName': extensionName})}}">Nouvelle carte +
+			</a>
+		</div>
+	{% endif %}
 	<div class="card-container">
 		{% for card in cards %}
 
@@ -18,30 +19,28 @@
 				<div>
 					<p class="card-name">{{ card.name }}</p>
 					<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extensionName ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
-
 				</div>
 				<div class="card-action">
-
-
-					<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
-						<button>-</button>
-					</a>
 					<a href="{{ path('card', {'gameName': gameName, 'extensionName':extensionName, 'cardName' : card.name}) }}" class="card-link">
-						<button>Voir la carte</button>
+						Voir la carte
 					</a>
-					<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">
-						<button>+</button>
-					</a>
+					{% if app.user %}
+						<div>
+							<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">-</a>
+							<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">+</a>
+						</div>
+						{% if is_granted('ROLE_ADMIN') %}
+							<div class="admin-button">
+								<a href="{{ path('delete_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="delete-card">
+									Supprimer
+								</a>
+								<a href="{{ path('edit_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="edit-card">
+									Modifier
+								</a>
+							</div>
+						{% endif %}
+					{% endif %}
 				</div>
-			</div>
-
-			<div class="admin-button">
-				<a href="{{ path('delete_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="delete-card">
-					Supprimer
-				</a>
-				<a href="{{ path('edit_card', {'gameName': gameName, 'extensionName':extensionName,'cardName' : card.name}) }}" class="edit-card">
-					Modifier
-				</a>
 			</div>
 		{% endfor %}
 	</div>

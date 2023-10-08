@@ -31,8 +31,6 @@ class MessageController extends AbstractController
         ]);
     }
 
-
-
     #[Route('/contact/{user_id_sender}/{user_id_recever}/message/send', name: 'send_message')]
     public function send_message(Request $request, $user_id_sender, $user_id_recever, UserRepository $userRepository, EntityManagerInterface $entityManager): JsonResponse
     {

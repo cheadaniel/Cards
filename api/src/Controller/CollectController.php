@@ -21,7 +21,6 @@ class CollectController extends AbstractController
 
         $user = $userRepository->findByUserName($userName);
         $collects = $collectRepository->findCollectionByUser($user);
-        //dd($collects);
 
         return $this->render('collect/userCollectGame.html.twig', [
             'userName' => $userName,
@@ -51,9 +50,6 @@ class CollectController extends AbstractController
         $userOwnCards = $cardCollectionRepository->findCardsByCollect($collect);
 
         $cards = $cardRepository->findCardsByGameAndExtension($gameName, $extensionName);
-        //dd($userOwnCards);
-
-
 
         return $this->render('collect/userCollectCards.html.twig', [
             'userName' => $userName,
@@ -65,34 +61,50 @@ class CollectController extends AbstractController
     }
 
     #[Route('tradeable/{userId}/{userCardCollectionId}', name: 'tradable')]
-    public function toggleTradable($userId, $userCardCollectionId, CardCollectionRepository $cardCollectionRepository, EntityManagerInterface $entityManager)
+    public function toggleTradable($userId, $userCardCollectionId, CardCollectionRepository $cardCollectionRepository, CollectRepository $collectRepository, UserRepository $userRepository, EntityManagerInterface $entityManager)
     {
+        $user = $userRepository->find($userId);
+
         $cardCollection = $cardCollectionRepository->find($userCardCollectionId);
+        $collectId = $cardCollection->getCollectId();
+        $collect = $collectRepository->find($collectId);
+        $userCollect = $collect->getUserId();
 
-        // Inversez l'état 'échangeable' (Tradable) de la carte
-        $isTradable = $cardCollection->isTradable();
-        $cardCollection->setTradable(!$isTradable);
+        if ($userCollect == $user) {
+            // La carte appartient à l'utilisateur, nous pouvons la mettre à jour
+            $isTradable = $cardCollection->isTradable();
+            $cardCollection->setTradable(!$isTradable);
 
-        // Enregistrez les modifications dans la base de données
-        $entityManager->persist($cardCollection);
-        $entityManager->flush();
+            $entityManager->persist($cardCollection);
+            $entityManager->flush();
 
-        return new Response(null, Response::HTTP_NO_CONTENT);
+            return new Response(null, Response::HTTP_NO_CONTENT);
+        } else {
+            return new Response('Cette carte ne vous appartient pas', Response::HTTP_FORBIDDEN);
+        }
     }
 
     #[Route('favourite/{userId}/{userCardCollectionId}', name: 'favourite')]
-    public function toggleFavourite($userId, $userCardCollectionId, CardCollectionRepository $cardCollectionRepository, EntityManagerInterface $entityManager)
+    public function toggleFavourite($userId, $userCardCollectionId, CardCollectionRepository $cardCollectionRepository, CollectRepository $collectRepository, UserRepository $userRepository, EntityManagerInterface $entityManager)
     {
+        $user = $userRepository->find($userId);
+
         $cardCollection = $cardCollectionRepository->find($userCardCollectionId);
+        $collectId = $cardCollection->getCollectId();
+        $collect = $collectRepository->find($collectId);
+        $userCollect = $collect->getUserId();
 
-        // Inversez l'état 'échangeable' (Tradable) de la carte
-        $isFavourite = $cardCollection->isFavourite();
-        $cardCollection->setFavourite(!$isFavourite);
+        if ($userCollect == $user) {
+            // La carte appartient à l'utilisateur, nous pouvons la mettre à jour
+            $isFavourite = $cardCollection->isFavourite();
+            $cardCollection->setFavourite(!$isFavourite);
 
-        // Enregistrez les modifications dans la base de données
-        $entityManager->persist($cardCollection);
-        $entityManager->flush();
+            $entityManager->persist($cardCollection);
+            $entityManager->flush();
 
-        return new Response(null, Response::HTTP_NO_CONTENT);
+            return new Response(null, Response::HTTP_NO_CONTENT);
+        } else {
+            return new Response('Cette carte ne vous appartient pas', Response::HTTP_FORBIDDEN);
+        }
     }
 }

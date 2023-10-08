@@ -24,11 +24,11 @@ class GameCascadeDeletionService
         // Supprimer les extensions, les cartes et autres entités en cascade
         $this->deleteExtensions($game);
         // $this->deleteDecks($game);
-        // $this->deleteCollections($game);
 
-        // Enfin, supprimez le jeu lui-même
+
+        // Enfin, supprimer le jeu lui-même
         $this->entityManager->remove($game);
-        //$this->entityManager->flush();
+        $this->entityManager->flush();
     }
 
     public function deleteExtensions(Game $game)
@@ -36,14 +36,14 @@ class GameCascadeDeletionService
         $extensions = $game->getGameExtensionId();
 
         foreach ($extensions as $extension) {
-            // Supprimez les cartes liées à cette extension
+            // Supprimer les cartes liées à cette extension
             $this->deleteCardsForExtension($extension);
 
-            // Supprimez l'extension
+            // Supprimer l'extension
             $this->entityManager->remove($extension);
         }
 
-        //$this->entityManager->flush();
+        $this->entityManager->flush();
     }
 
     public function deleteCardsForExtension(Extension $extension)
@@ -52,9 +52,10 @@ class GameCascadeDeletionService
 
         foreach ($cards as $card) {
             $this->deleteComments($card);
+            $this->deleteCollections($card);
             $this->entityManager->remove($card);
         }
-        //$this->entityManager->flush();
+        $this->entityManager->flush();
     }
 
     public function deleteComments(Card $card)
@@ -65,7 +66,7 @@ class GameCascadeDeletionService
             $this->entityManager->remove($comment);
         }
 
-        //$this->entityManager->flush();
+        $this->entityManager->flush();
     }
 
     public function deleteDecks(Game $game)
@@ -79,26 +80,27 @@ class GameCascadeDeletionService
             $this->entityManager->remove($deck);
         }
 
-        //$this->entityManager->flush();
+        $this->entityManager->flush();
     }
 
-    // Ajoutez les méthodes pour supprimer les cartes pour un deck si nécessaire
 
-    public function deleteCollections(Game $game)
+    public function deleteCollections(Card $card)
     {
-        $collections = $game->getGameCollectId();
+        // Récupérer toutes les CardCollection liées à la carte
+        $cardCollections = $card->getCardCardCollectionId();
 
-        foreach ($collections as $collection) {
-            // Supprimez les cartes liées à cette collection si nécessaire
-            // $this->deleteCardsForCollection($collection);
+        foreach ($cardCollections as $cardCollection) {
+            // Récupérer la collection liée à cette CardCollection
+            $collection = $cardCollection->getCollectId();
 
+            // Supprimer la CardCollection
+            $this->entityManager->remove($cardCollection);
+
+            // Supprimer la collection elle-même
             $this->entityManager->remove($collection);
         }
 
-        //$this->entityManager->flush();
+        // Appliquer les suppressions enregistrées
+        $this->entityManager->flush();
     }
-
-    // Ajoutez les méthodes pour supprimer les cartes pour une collection si nécessaire
-
-
 }

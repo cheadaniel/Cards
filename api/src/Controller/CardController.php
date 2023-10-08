@@ -25,9 +25,7 @@ class CardController extends AbstractController
     {
         $card = $cardRepository->findByCardName($cardName);
 
-        // Récupérez tous les commentaires associés à la carte
         $comments = $card->getCardCommentaryId();
-        //dd($comments);
 
         return $this->render('card/index.html.twig', [
             'gameName' => $gameName,
@@ -110,7 +108,7 @@ class CardController extends AbstractController
             $cardCollection = $cardCollectionRepository->findOneByCardAndCollect($card, $collect);
 
             if ($cardCollection) {
-                // Si la CardCollection existe déjà, augmentez la quantité de 1
+                // Si la CardCollection existe déjà, augmente la quantité de 1
                 $quantity = $cardCollection->getQuantity() + 1;
                 $cardCollection->setQuantity($quantity);
 
@@ -134,10 +132,10 @@ class CardController extends AbstractController
             $entityManager->persist($newCollect);
             $entityManager->flush();
 
-            // Maintenant que le Collect est persisté, vous pouvez l'utiliser
+            // Maintenant que le Collect est persisté, on peut l'utiliser
             $cardCollect = new CardCollection();
             $cardCollect->setCardId($card);
-            $cardCollect->setCollectId($newCollect); // Utilisez $newCollect ici
+            $cardCollect->setCollectId($newCollect); 
 
             $entityManager->persist($cardCollect);
             $entityManager->flush();
@@ -162,7 +160,7 @@ class CardController extends AbstractController
             $cardCollection = $cardCollectionRepository->findOneByCardAndCollect($card, $collect);
 
             if ($cardCollection) {
-                // Si la CardCollection existe déjà, diminuez la quantité de 1 jusqu'à un minimum de 0
+                // Si la CardCollection existe déjà, diminue la quantité de 1 jusqu'à un minimum de 0
                 $currentQuantity = $cardCollection->getQuantity();
                 $newQuantity = max($currentQuantity - 1, 0);
                 $cardCollection->setQuantity($newQuantity);

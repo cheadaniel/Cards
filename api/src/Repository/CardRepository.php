@@ -60,6 +60,31 @@ class CardRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findMinAndMaxCardIds()
+    {
+        $entityManager = $this->getEntityManager();
+        $queryBuilder = $entityManager->createQueryBuilder();
+
+        // Sélectionnez le minimum et le maximum des ID de la table 'Card'
+        $queryBuilder->select('MIN(c.id) as minId', 'MAX(c.id) as maxId')
+            ->from('App\Entity\Card', 'c');
+
+        $query = $queryBuilder->getQuery();
+        $result = $query->getOneOrNullResult();
+
+        if (!$result) {
+            return [
+                'minId' => null,
+                'maxId' => null,
+            ];
+        }
+
+        return [
+            'minId' => $result['minId'],
+            'maxId' => $result['maxId'],
+        ];
+    }
+
     //    /**
     //     * @return Card[] Returns an array of Card objects
     //     */
