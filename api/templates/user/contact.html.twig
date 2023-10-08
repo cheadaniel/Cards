@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
+{% block title %}Contact
+{% endblock %}
 
 {% block body %}
 	<aside>
-
 		<h1>Mes Contacts</h1>
 		<div class="">
 			{% for recever in recevers %}
@@ -18,11 +19,7 @@
 		<form class="messageForm">
 			<label for="messageContent">Contenu du message :</label>
 			<input id="messageContent" name="messageContent" rows="4" cols="50" required></input>
-			<button type="submit">Envoyer</button>
-		</form>
-	</div>
-{% endblock %}
-
-{% block javascripts %}
-	<script src="{{ asset('js/contact.js') }}" type="module"></script>
-{% endblock %}
+		<button type="submit">Envoyer</button>
+	</form>
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('js/contact.js') }}" type="module"></script>{% endblock %}
