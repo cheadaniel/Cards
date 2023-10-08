@@ -319,7 +319,8 @@ header {
 #registration_form div,
 .connexion form div,
 #game_form div,
-#extension_form div {
+#extension_form div,
+#card_form div {
     margin: 2rem;
     display: flex;
     flex-direction: column;
@@ -329,14 +330,17 @@ header {
 #registration_form div label,
 .connexion form label,
 #game_form div label,
-#extension_form div label {
+#extension_form div label,
+#card_form div label {
     margin: 2rem 0;
 }
 
 #registration_form div input,
 .connexion form input,
 #game_form div input,
-#extension_form div input {
+#extension_form div input,
+#card_form div input,
+#card_form div textarea {
     padding: 1rem;
     width: 55%;
     border: var(--rouge) solid .25rem;
@@ -344,21 +348,28 @@ header {
     font-size: 2.2rem;
 }
 
+#card_form_Description {
+    height: 15rem;
+}
+
 /********************** REGISTER/LOING/FORM FIN **********************/
 
 /********************** GAME **********************/
 .new-game,
-.new-extension {
+.new-extension,
+.new-card {
     margin: 2rem 0;
 }
 
 .new-game a,
-.new-extension a {
+.new-extension a,
+.new-card a {
     color: var(--rouge);
 }
 
 .game-container,
-.extension-container {
+.extension-container,
+.card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -385,21 +396,25 @@ header {
     padding-bottom: 2rem;
 }
 
-.admin-button {
+.admin-button,
+.carte-quantity {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.admin-button a {
-    padding: 2rem 1rem;
+.admin-button a,
+.carte-quantity a {
+    padding: 2rem 2rem;
     width: 45%;
     font-size: 1.5rem;
 }
 
 .delete-game,
-.delete-extension {
+.delete-extension,
+.delete-card,
+.decrement-button {
     border-right: 0.15rem dashed var(--rouge);
 }
 

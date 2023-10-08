@@ -12,11 +12,11 @@
 			</a>
 		</div>
 	{% endif %}
+
 	<div class="card-container">
 		{% for card in cards %}
-
 			<div class="card-cart">
-				<div>
+				<div class="carte-card">
 					<p class="card-name">{{ card.name }}</p>
 					<img src="{{ asset('media/images/' ~ gameName ~ '/' ~ extensionName ~ '/' ~ card.image) }}" alt="{{ card.name }}" class="card_img">
 				</div>
@@ -25,8 +25,8 @@
 						Voir la carte
 					</a>
 					{% if app.user %}
-						<div>
-							<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">-</a>
+						<div class="carte-quantity">
+							<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}" class="decrement-button">-</a>
 							<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">+</a>
 						</div>
 						{% if is_granted('ROLE_ADMIN') %}

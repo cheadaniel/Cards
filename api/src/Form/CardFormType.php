@@ -38,6 +38,9 @@ class CardFormType extends AbstractType
             ])
             ->add("Envoyer", SubmitType::class, [
                 'label' => 'Créer',
+                'attr' => [
+                    'class' => 'btn',
+                ],
             ]);
     }
 
