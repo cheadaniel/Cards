@@ -86,8 +86,8 @@ class CardController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('extension', ['gameName' => $gameName, 'extensionName' => $extensionName]);
         }
-        return $this->render('extension/editExtension.html.twig', [
-            'extensionForm' => $form->createView(),
+        return $this->render('card/editCard.html.twig', [
+            'cardForm' => $form->createView(),
         ]);
     }
 
