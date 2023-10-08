@@ -1,5 +1,94 @@
+:root {
+    --bleu: #7e7eff;
+    --rouge: #a12525;
+    --orange: #fea711;
+}
 
-/* Styles CSS pour aligner les messages de l'expéditeur à droite */
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+menu,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lugrasimo', sans-serif;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+/* Mode clair */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+
 .message {
     margin: 0.5rem 0
 }
@@ -41,6 +130,41 @@
     display: none;
 }
 
-/* .have{
-    opacity: 0.25;
-} */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 1rem;
+}
+
+.carousel-next {
+    right: 1rem;
+}
+
+/********************** HEADER **********************/
+
+/********************** HEADER FIN **********************/

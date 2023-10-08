@@ -66,12 +66,7 @@ class GameController extends AbstractController
         }
         // il faut au préalable supprimer toutes les extensions, les cartes, les commentaires, les deck et collections associées
         $gameCascadeDeletionService->deleteExtensions($game);
-        // $this->deleteCardsAndRelatedData($game, $entityManager);
-        // $this->deleteCommentsAndRelatedData($game, $entityManager);
-        // $this->deleteDecksAndRelatedData($game, $entityManager);
-        // $this->deleteCollectionsAndRelatedData($game, $entityManager);
 
-        //dd($game);
         $gameRepository->remove($game, true);
         return $this->redirectToRoute('games');
     }

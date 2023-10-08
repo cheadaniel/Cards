@@ -6,11 +6,12 @@
 {% block body %}
 
 	<h1>Games</h1>
-	{# mettre une secu pour l'admin seulement  #}
-	<div class="new-game">
-		<a href="{{ path('create_game')}}">Nouveau jeu +
-		</a>
-	</div>
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="new-game">
+			<a href="{{ path('create_game')}}">Nouveau jeu +
+			</a>
+		</div>
+	{% endif %}
 	<div class="game-container">
 		{% for game in games %}
 			<a href="{{ path('game', {'gameName': game.name}) }}" class="game">
@@ -19,14 +20,16 @@
 					<p class="game-name">{{ game.name }}</p>
 				</div>
 			</a>
-			<div class="admin-button">
-				<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
-					Supprimer
-				</a>
-				<a href="{{ path('edit_game', {'gameName': game.name}) }}" class="edit-game">
-					Modifier
-				</a>
-			</div>
+			{% if is_granted('ROLE_ADMIN') %}
+				<div class="admin-button">
+					<a href="{{ path('delete_game', {'gameName': game.name}) }}" class="delete-game">
+						Supprimer
+					</a>
+					<a href="{{ path('edit_game', {'gameName': game.name}) }}" class="edit-game">
+						Modifier
+					</a>
+				</div>
+			{% endif %}
 
 		{% endfor %}
 	</div>

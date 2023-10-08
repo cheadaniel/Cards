@@ -24,10 +24,8 @@ commentContainer.addEventListener('click', function (event) {
         const commentaryId = event.target.getAttribute('data-id');
         const editForm = document.querySelector(`.edit-form[data-id="${commentaryId}"]`);
         const commentaryContent = document.querySelector(`.commentaire[data-id="${commentaryId}"] .content`);
-        //console.log(commentaryContent)
 
         if (editForm && commentaryContent) {
-            console.log("test")
             event.target.disabled = true
             commentaryContent.style.display = 'none';
             editForm.style.display = 'block';

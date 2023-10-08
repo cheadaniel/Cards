@@ -19,8 +19,7 @@ class ExtensionController extends AbstractController
     public function index($gameName, $extensionName, CardRepository $cardRepository): Response
     {
         $cards = $cardRepository->findCardsByGameAndExtension($gameName, $extensionName);
-        //dd($cards); 
-
+        
         return $this->render('extension/index.html.twig', [
             'gameName' => $gameName,
             'extensionName' => $extensionName,

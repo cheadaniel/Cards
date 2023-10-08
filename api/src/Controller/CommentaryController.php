@@ -36,7 +36,7 @@ class CommentaryController extends AbstractController
     public function create_commentary(Request $request, $gameName, $extensionName, $cardName, EntityManagerInterface $entityManager, CardRepository $cardRepository): JsonResponse
     {
 
-        // Récupérez l'utilisateur actuellement connecté 
+        // Récupére l'utilisateur actuellement connecté 
         $user = $this->security->getUser();
 
         // Récuperer la carte associé 
@@ -48,7 +48,7 @@ class CommentaryController extends AbstractController
         // Pour eviter les caractéres => " ' < >
         $contentVerif = htmlspecialchars($content);
 
-        // Créez un nouvel objet Commentary
+        // Créer un nouvel objet Commentary
         $comment = new Commentary();
         $comment->setContent($content);
         $comment->setUserId($user);
@@ -59,7 +59,6 @@ class CommentaryController extends AbstractController
 
         $comment->setCreatedAt($createdAt);
 
-        // Persistez le commentaire dans la base de données
         $entityManager->persist($comment);
         $entityManager->flush();
 

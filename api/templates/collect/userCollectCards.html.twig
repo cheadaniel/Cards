@@ -42,23 +42,23 @@
 					</a>
 				</div>
 
+				{% if app.user %}
+					{% if app.user.name == userName %}
+						{% for userCard in userOwnCards %}
+							{% if userCard.getCardId.id == card.id %}
+								<div class="have">
+									<a href="{{ path('favourite', {'userId': app.user.id, 'userCardCollectionId':userCard.id}) }}">Favorite</a>
+									<a href="{{ path('tradable', {'userId': app.user.id, 'userCardCollectionId':userCard.id,}) }}">Echangeable</a>
+								</div>
+							{% endif %}
+						{% endfor %}
 
-				{% if app.user.name == userName %}
-					{% for userCard in userOwnCards %}
-						{% if userCard.getCardId.id == card.id %}
-							<div class="have">
-								<a href="{{ path('favourite', {'userId': app.user.id, 'userCardCollectionId':userCard.id}) }}">Favorite</a>
-								<a href="{{ path('tradable', {'userId': app.user.id, 'userCardCollectionId':userCard.id,}) }}">Echangeable</a>
-							</div>
-						{% endif %}
-					{% endfor %}
-
-					<div>
-						<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">-</a>
-						<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">+</a>
-					</div>
+						<div>
+							<a href="{{path('remove_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">-</a>
+							<a href="{{path('add_card_to_collect', {'userId': app.user.id, 'gameName': gameName, 'cardId': card.id})}}">+</a>
+						</div>
+					{% endif %}
 				{% endif %}
-
 			</div>
 		{% endfor %}
 	</div>
