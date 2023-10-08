@@ -46,9 +46,9 @@
 					{% endif %}
 					{% if app.user %}
 						{% if is_granted('ROLE_ADMIN') %}
-							<li>
+							{# <li>
 								<a href="">Admin</a>
-							</li>
+							</li> #}
 						{%  endif %}
 						<li>
 							<a href="{{path('user_collect', {'userName': app.user.name})}}">Ma collection</a>

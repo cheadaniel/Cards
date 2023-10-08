@@ -1,5 +1,5 @@
 {% block body %}
-	<div class="">
+	<div>
 		<h1>Messages</h1>
 		<div class="message-container">
 			{% for message in old_messages %}
@@ -7,19 +7,17 @@
 					<span class="message-timestamp {% if message.getUserSenderId() == user_sender %}timestamp-left{% else %}timestamp-right{% endif %}">
 						{{ message.createdAt|date('F j, H:i') }}
 					</span>
-					<p class="content">{{ message.content }}</p>
 					{% if message.getUserSenderId() == user_sender %}
-						<button class="edit-message" data-id="{{ message.id }}">Modifier</button>
+						<a href="{{ path('delete_message', {'user_id_sender': app.user.id,'message_id':message.id}) }}" class="delete-message btn" data-id="{{ message.id }}">
+							Supprimer
+						</a>
+						<button class="edit-message btn" data-id="{{ message.id }}">Modifier</button>
 						<form class="edit-form" data-id="{{ message.id }}" method="POST">
 							<textarea class="edit-content" name="edit-content">{{ message.content }}</textarea>
-							<button class="save-edit" data-id="{{ message.id }}">Enregistrer</button>
+							<button class="save-edit btn" data-id="{{ message.id }}">Enregistrer</button>
 						</form>
-						<button>
-							<a href="{{ path('delete_message', {'user_id_sender': app.user.id,'message_id':message.id}) }}" class="delete-message" data-id="{{ message.id }}">
-								Supprimer
-							</a>
-						</button>
 					{% endif %}
+					<p class="content">{{ message.content }}</p>
 				</div>
 			{% endfor %}
 		</div>

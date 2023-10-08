@@ -4,15 +4,22 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-	</style>
 
-	<div class="example-wrapper">
+	<div class="card-container" id="mon-profil">
 		<h1>Profil de
 			{{ user.name }}</h1>
-		<p>Email:
-			{{ user.email }}</p>
-		<p>Pseudo:
-			{{ user.name }}</p>
+		<div class="card-name">
+			<p>Email:
+				{{ user.email }}</p>
+		</div>
+		<div class="card-name">
+			<p>Pseudo:
+				{{ user.name }}</p>
+		</div>
+
+		<div class="card-action">
+			<a href="{{path('user_collect', {'userName': user.name})}}" class="btn card-link">Ma collection</a>
+		</div>
+
 	</div>
 {% endblock %}
