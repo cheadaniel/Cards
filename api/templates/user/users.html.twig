@@ -7,12 +7,13 @@
 
 	<div>
 		{# <form action="{{ path('book_search') }}" method="get" class="actions search">
-																					<input type="text" name="keyword" placeholder="Recherche...">
-																					<button type="submit">Rechercher</button>
-																				</form> #}
+																							<input type="text" name="keyword" placeholder="Recherche...">
+																							<button type="submit">Rechercher</button>
+																						</form> #}
 	</div>
+	<h1>Utilsateurs</h1>
 	<div>
-		<table>
+		<table class="users-table">
 			<tbody>
 				{% for user in users %}
 					<tr>
@@ -22,7 +23,7 @@
 						</td>
 						{% if app.user %}
 							<td>
-								<button class="contact-btn" data-user-recever-id={{user.id}}>Contacter</button>
+								<button class="contact-btn btn" data-user-recever-id={{user.id}}>Contacter</button>
 							</td>
 						{% endif %}
 					</tr>
@@ -32,9 +33,15 @@
 		{% if app.user %}
 			<div>
 				<form class="messageForm" data-user-sender-id="{{ app.user.id }}">
-					<label for="messageContent">Contenu du message :</label>
-					<input id="messageContent" name="messageContent" rows="4" cols="50" required>
-					<button type="submit" class="btn-sendMessage">Envoyer</button>
+					<div>
+						<label for="messageContent">Contenu du message :</label>
+						<input id="messageContent" name="messageContent" rows="4" cols="50" required>
+					</div>
+					<div>
+						<button type="submit" class="btn-sendMessage btn">Envoyer</button>
+					</div>
+
+
 				</form>
 			</div>
 		{% endif %}

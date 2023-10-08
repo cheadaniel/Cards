@@ -747,4 +747,56 @@ aside {
     padding: 2rem 3rem;
 }
 
+.users-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.users-table tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.users-table tbody tr {
+    margin: 1rem 0;
+    border: var(--bleu) 0.15rem dashed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.users-table .btn {
+    font-size: 1.8rem;
+    border: 0.25rem solid var(--orange);
+    padding: 2rem 2rem;
+    background-color: var(--orange);
+    color: var(--rouge);
+    transition: color .5s;
+    transition: background-color .5s;
+    font-family: var(--Lugrasimo);
+}
+
+.users-table .btn:hover {
+    color: var(--orange);
+    background-color: var(--rouge);
+}
+
+.users-table tbody tr a {
+    padding: 2rem;
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+.users-table tbody tr a:hover {
+    color: var(--orange);
+    background-color: var(--rouge);
+}
 /********************** CONTACT FIN **********************/
